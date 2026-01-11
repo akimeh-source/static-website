@@ -126,9 +126,7 @@
     .wrap{
       width:100%;
       max-width: var(--max);
-      padding-bottom: calc(var(--sticky-h) + 60px + var(--safe-bottom));
-      position: relative;
-      z-index: 1;
+      padding-bottom: calc(var(--sticky-h) + 80px + var(--safe-bottom));
     }
 
     :focus-visible{
@@ -154,7 +152,6 @@
       display:block;
       text-decoration:none;
       color: inherit;
-      overflow: hidden;
     }
     .hero img{
       width:100%;
@@ -229,7 +226,7 @@
       display:flex;
       flex-direction:column;
       gap: 12px;
-      padding-bottom: 20px;
+      padding-bottom: calc(var(--sticky-h) + 28px + var(--safe-bottom));
     }
 
     .cta-row{
@@ -551,7 +548,7 @@
       border-radius: 18px;
       overflow:hidden;
       border: 1px solid rgba(26,18,15,.10);
-      background: #f5f5f5;
+      background: #ffffff;
       box-shadow: 0 10px 18px rgba(0,0,0,.10);
     }
     .sig-img img{
@@ -559,6 +556,7 @@
       height: 168px;
       object-fit:cover;
       display:block;
+      background: #ffffff;
       transform: scale(1.01);
       filter: contrast(1.03) saturate(1.05);
       transition: transform .22s ease, filter .22s ease;
@@ -667,7 +665,7 @@
       display: block;
       border-radius: 18px;
       box-shadow: 0 22px 70px rgba(0,0,0,.38);
-      background: #f5f5f5;
+      background: #ffffff;
       transform: translateY(10px) scale(.985);
       animation: lbPop .18s ease-out forwards;
     }
