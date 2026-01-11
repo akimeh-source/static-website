@@ -262,17 +262,14 @@
     }
 
           /* Info Box & Hours */
-/* Redesigned Compact Info */
-      .profile-meta { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
-      .rating-compact { background: rgba(255,255,255,0.95); padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-      .review-count { font-weight: 400; color: var(--muted); font-size: 13px; }
-      .hours-compact { background: rgba(255,255,255,0.95); padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-      .hours-label { display: flex; align-items: center; gap: 4px; }
-      .hours-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; margin-top: 6px; background: white; border-radius: 12px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10; }
-      .hours-compact.open .hours-dropdown { display: block; }
-      .hours-dropdown > div { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; font-weight: 400; }
-      .hours-dropdown span:first-child { font-weight: 500; }
-      .hours-dropdown span:last-child { color: var(--muted); }
+      .info-box { margin-top: 16px; background: rgba(255,255,255,0.9); padding: 14px; border-radius: 12px; box-shadow: var(--shadow-soft); }
+      .rating { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+      .hours summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--pill); padding: 6px 0; }
+      .hours-list { margin-top: 8px; }
+      .hours-list > div { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; }
+      .hours-list span:first-child { font-weight: 500; }
+      .hours-list span:last-child { color: var(--muted); }
+  </style>
   
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=ZLHMG-2P3C7F"></script>
@@ -298,22 +295,27 @@
         <h1 class="profile-title">The Urban Chocolatier</h1>
         <p class="profile-address">393 High Rd, Wembley HA9 6AA</p>
                   
-          <!-- Redesigned Info Section -->
-          <div class="profile-meta">
-            <div class="rating-compact">⭐ 4.6 <span class="review-count">(1,997)</span></div>
-            <div class="hours-compact" onclick="this.classList.toggle('open')">
-              <span class="hours-label">⏰ Opening Hours</span>
-              <div class="hours-dropdown">
-                <div><span>Sun</span><span>12pm–1am</span></div>
-                <div><span>Mon</span><span>1pm–1am</span></div>
-                <div><span>Tue</span><span>1pm–1am</span></div>
-                <div><span>Wed</span><span>1pm–1am</span></div>
-                <div><span>Thu</span><span>1pm–1am</span></div>
-                <div><span>Fri</span><span>1pm–2am</span></div>
-                <div><span>Sat</span><span>12pm–2am</span></div>
+          <!-- Google Rating & Hours -->
+          <div class="info-box">
+            <div class="rating">⭐ 4.6 (1,997 reviews)</div>
+            <details class="hours">
+              <summary>Opening Hours</summary>
+              <div class="hours-list">
+                <div><span>Sunday</span><span>12pm–1am</span></div>
+                <div><span>Monday</span><span>1pm–1am</span></div>
+                <div><span>Tuesday</span><span>1pm–1am</span></div>
+                <div><span>Wednesday</span><span>1pm–1am</span></div>
+                <div><span>Thursday</span><span>1pm–1am</span></div>
+                <div><span>Friday</span><span>1pm–2am</span></div>
+                <div><span>Saturday</span><span>12pm–2am</span></div>
               </div>
-        >
+            </details>
+          </div>
 
+        <div class="panel-actions" aria-label="Quick actions">
+          <a class="mini-ico" href="tel:02070181150" data-track="call" data-umami-event="call_tap" aria-label="Call">
+                        <a class="mini-ico" href="https://www.instagram.com/theurbanchocolatier" data-track="instagram" data-umami-event="instagram_tap" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2C5.6 4 4 5.6 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6m9.65 1.5c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1M12 7c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5m0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/></svg>
             </a>
             <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z"/></svg>
           </a>
