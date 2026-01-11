@@ -126,7 +126,9 @@
     .wrap{
       width:100%;
       max-width: var(--max);
-      padding-bottom: calc(var(--sticky-h) + 28px + var(--safe-bottom));
+      padding-bottom: calc(var(--sticky-h) + 60px + var(--safe-bottom));
+      position: relative;
+      z-index: 1;
     }
 
     :focus-visible{
@@ -147,11 +149,12 @@
     .hero{
       position:relative;
       height: 250px;
-      background: #000;
+      background: #2B1B14;
       cursor: zoom-in;
       display:block;
       text-decoration:none;
       color: inherit;
+      overflow: hidden;
     }
     .hero img{
       width:100%;
@@ -226,7 +229,7 @@
       display:flex;
       flex-direction:column;
       gap: 12px;
-      padding-bottom: calc(var(--sticky-h) + 28px + var(--safe-bottom));
+      padding-bottom: 20px;
     }
 
     .cta-row{
@@ -548,7 +551,7 @@
       border-radius: 18px;
       overflow:hidden;
       border: 1px solid rgba(26,18,15,.10);
-      background: #111;
+      background: #f5f5f5;
       box-shadow: 0 10px 18px rgba(0,0,0,.10);
     }
     .sig-img img{
@@ -664,7 +667,7 @@
       display: block;
       border-radius: 18px;
       box-shadow: 0 22px 70px rgba(0,0,0,.38);
-      background: #111;
+      background: #f5f5f5;
       transform: translateY(10px) scale(.985);
       animation: lbPop .18s ease-out forwards;
     }
