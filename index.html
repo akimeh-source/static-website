@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#3B6F8C" />
   <title>The Urban Chocolatier</title>
-  <meta name="description" content="The Urban Chocolatier — menu, reviews, orders, loyalty, Instagram and website." />
+  <meta name="description" content="The Urban Chocolatier – menu, reviews, orders, loyalty, Instagram and website." />
 
   <!-- Social preview -->
   <meta property="og:title" content="The Urban Chocolatier" />
@@ -108,8 +108,7 @@
       display:flex;
       gap: 12px;
     }
-          /* Hide the huge call button display - keep only mini icons */
-      .pill[href^="tel:"] { display: none !important; }
+
     .mini-ico{
       width: 34px;
       height: 34px;
@@ -263,25 +262,53 @@
       min-height: 18px;
     }
 
-          /* Info Box & Hours */
-/* Improved Info Box & Hours - More subtle design */
-      .info-box { margin-top: 10px; background: rgba(255,255,255,0.75); padding: 10px 12px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-      .rating { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
-      .hours summary { cursor: pointer; font-weight: 600; font-size: 13.5px; color: var(--pill); padding: 4px 0; }
-      .hours-list { margin-top: 6px; }
-      .hours-list > div { display: flex; justify-content: space-between; padding: 3px 0; font-size: 12.5px; }
-      .hours-list span:first-child { font-weight: 500; }
-      .hours-list span:last-child { color: var(--muted); }
+    .info-box { 
+      margin-top: 10px; 
+      background: rgba(255,255,255,0.75); 
+      padding: 10px 12px; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+    }
+    .rating { 
+      font-size: 14px; 
+      font-weight: 600; 
+      margin-bottom: 8px; 
+    }
+    .hours summary { 
+      cursor: pointer; 
+      font-weight: 600; 
+      font-size: 13.5px; 
+      color: var(--pill); 
+      padding: 4px 0; 
+    }
+    .hours-list { 
+      margin-top: 6px; 
+    }
+    .hours-list > div { 
+      display: flex; 
+      justify-content: space-between; 
+      padding: 3px 0; 
+      font-size: 12.5px; 
+    }
+    .hours-list span:first-child { 
+      font-weight: 500; 
+    }
+    .hours-list span:last-child { 
+      color: var(--muted); 
+    }
   </style>
   
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=ZLHMG-2P3C7F"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLHM2P3C7F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-ZLHM2P3C7F');
   </script>
+  
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="bd86632a-3799-40d4-988d-02c0fde2ea1a"></script>
 </head>
 
 <body>
@@ -298,29 +325,29 @@
         <h1 class="profile-title">The Urban Chocolatier</h1>
         <p class="profile-address">393 High Rd, Wembley HA9 6AA</p>
                   
-          <!-- Google Rating & Hours -->
-          <div class="info-box">
-            <div class="rating">⭐ 4.6 (1,997 reviews)</div>
-            <details class="hours">
-              <summary>Opening Hours</summary>
-              <div class="hours-list">
-                <div><span>Sunday</span><span>12pm–1am</span></div>
-                <div><span>Monday</span><span>1pm–1am</span></div>
-                <div><span>Tuesday</span><span>1pm–1am</span></div>
-                <div><span>Wednesday</span><span>1pm–1am</span></div>
-                <div><span>Thursday</span><span>1pm–1am</span></div>
-                <div><span>Friday</span><span>1pm–2am</span></div>
-                <div><span>Saturday</span><span>12pm–2am</span></div>
-              </div>
-            </details>
-          </div>
+        <div class="info-box">
+          <div class="rating">⭐ 4.6 (1,997 reviews)</div>
+          <details class="hours">
+            <summary>Opening Hours</summary>
+            <div class="hours-list">
+              <div><span>Sunday</span><span>12pm–1am</span></div>
+              <div><span>Monday</span><span>1pm–1am</span></div>
+              <div><span>Tuesday</span><span>1pm–1am</span></div>
+              <div><span>Wednesday</span><span>1pm–1am</span></div>
+              <div><span>Thursday</span><span>1pm–1am</span></div>
+              <div><span>Friday</span><span>1pm–2am</span></div>
+              <div><span>Saturday</span><span>12pm–2am</span></div>
+            </div>
+          </details>
+        </div>
 
         <div class="panel-actions" aria-label="Quick actions">
           <a class="mini-ico" href="tel:02070181150" data-track="call" data-umami-event="call_tap" aria-label="Call">
-                        <a class="mini-ico" href="https://www.instagram.com/theurbanchocolatier" data-track="instagram" data-umami-event="instagram_tap" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2C5.6 4 4 5.6 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6m9.65 1.5c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1M12 7c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5m0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/></svg>
-            </a>
             <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z"/></svg>
+          </a>
+
+          <a class="mini-ico" href="https://www.instagram.com/theurbanchocolatier" data-track="instagram" data-umami-event="instagram_tap" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2C5.6 4 4 5.6 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6m9.65 1.5c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1M12 7c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5m0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/></svg>
           </a>
 
           <a class="mini-ico" href="https://www.google.com/maps/place/The+Urban+Chocolatier/@51.5534948,-0.2950961,17z/data=!3m1!4b1!4m6!3m5!1s0x4876123271f2f00f:0x3af8ee62528b4453!8m2!3d51.5534915!4d-0.2925212!16s%2Fg%2F11f_j32_c8?entry=ttu" target="_blank" rel="noopener" data-track="map" data-umami-event="map_open" aria-label="Open location">
@@ -355,15 +382,10 @@
         <svg class="pill-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
       </a>
 
-    
-        </div>
-        <svg class="pill-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
-      </a>
-
       <a class="pill" href="https://urbanchocolatier.com/" target="_blank" rel="noopener" data-track="website" data-umami-event="website_open">
         <div class="pill-left">
           <div class="pill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z"/></svg></div>
-          <div class="pill-texts"><div class="pill-title">website</div><div class="pill-sub">See our dessert selection</div></div>
+          <div class="pill-texts"><div class="pill-title">Website</div><div class="pill-sub">See our dessert selection</div></div>
         </div>
         <svg class="pill-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
       </a>
