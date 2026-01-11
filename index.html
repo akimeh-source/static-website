@@ -1,19 +1,31 @@
+```html
 <!doctype html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#3B6F8C" />
+  <meta name="theme-color" content="#2B1B14" />
+
   <title>The Urban Chocolatier | Premium Desserts in Wembley</title>
   <meta name="description" content="Experience luxury desserts at The Urban Chocolatier in Wembley. Famous for our chocolate profiteroles, waffles, and signature creations. Open late, delivery available." />
 
+  <!-- Social preview -->
   <meta property="og:title" content="The Urban Chocolatier | Premium Desserts in Wembley" />
   <meta property="og:description" content="Experience luxury desserts at The Urban Chocolatier. Famous for our chocolate profiteroles and signature creations." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
+  <meta property="og:url" content="https://urbanchocolatier.com/" />
+  <meta property="og:site_name" content="The Urban Chocolatier" />
+  <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Favicon -->
   <link rel="icon" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261.jpeg?t=1708449747" />
 
+  <!-- Optional performance hints -->
+  <link rel="preconnect" href="https://cdn0030.qrcodechimp.com" crossorigin>
+  <link rel="preload" as="image" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
+
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,211 +64,806 @@
 
   <style>
     :root{
-      --bg-top-1:#f5c4d2; --bg-top-2:#e7c8ff; --bg-top-3:#f6e2ea; --bg-bottom:#3B6F8C;
-      --card-radius:18px; --pill-radius:999px;
-      --blue-panel:#3B6F8C; --pill:#7E3AA6; --pill-dark:#6d3290; --pill-text:#ffffff;
-      --shadow: 0 18px 35px rgba(0,0,0,.20); --shadow-soft: 0 10px 25px rgba(0,0,0,.18);
-      --text:#0c0c0f; --muted:rgba(12,12,15,.72);
-      --max: 420px; --safe-bottom: env(safe-area-inset-bottom, 0px);
+      /* Luxury dessert palette */
+      --bg-1:#FFF3F3;
+      --bg-2:#F6E9FF;
+      --bg-3:#FFE7D9;
+      --ink:#1a120f;                 /* deep chocolate text */
+      --muted:rgba(26,18,15,.68);
+      --surface:rgba(255,255,255,.78);
+      --surface-solid:#ffffff;
+      --stroke:rgba(26,18,15,.10);
+
+      --accent:#7E3AA6;              /* purple accent */
+      --accent-2:#5f2a81;
+      --choc:#2B1B14;                /* rich dark */
+      --chip:rgba(255,255,255,.16);
+
+      --radius-1:18px;
+      --radius-2:22px;
+      --radius-pill:999px;
+
+      --shadow-1: 0 14px 30px rgba(0,0,0,.12);
+      --shadow-2: 0 10px 24px rgba(0,0,0,.10);
+
+      --max: 420px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --sticky-h: 74px;
     }
+
     *{ box-sizing:border-box; }
     html,body{ height:100%; }
     body{
       margin:0;
       font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
-      color: var(--text); display:flex; justify-content:center;
-      padding: 22px 14px calc(120px + var(--safe-bottom));
-      background: radial-gradient(900px 600px at 20% 10%, rgba(255,255,255,.55), transparent 60%),
-        radial-gradient(700px 500px at 90% 18%, rgba(255,255,255,.35), transparent 55%),
-        radial-gradient(900px 700px at 78% 40%, rgba(255,255,255,.25), transparent 60%),
-        linear-gradient(180deg, var(--bg-top-1) 0%, var(--bg-top-2) 28%, var(--bg-top-3) 40%, var(--bg-bottom) 40%, var(--bg-bottom) 100%);
-      opacity: 0; animation: fadeIn 0.6s ease-out forwards;
+      color: var(--ink);
+      display:flex;
+      justify-content:center;
+      padding: 18px 14px calc(var(--sticky-h) + 22px + var(--safe-bottom));
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(255,255,255,.55), transparent 60%),
+        radial-gradient(700px 500px at 90% 18%, rgba(255,255,255,.30), transparent 55%),
+        radial-gradient(900px 700px at 78% 40%, rgba(255,255,255,.20), transparent 60%),
+        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 34%, var(--bg-3) 64%, #F3E7FF 100%);
     }
-    @keyframes fadeIn { to { opacity: 1; } }
-    .wrap{ width:100%; max-width: var(--max); animation: slideUp 0.7s ease-out; }
-    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    .profile-card{ border-radius: var(--card-radius); overflow:hidden; box-shadow: var(--shadow); background: #fff; }
-    .profile-photo{ height: 190px; background: url("https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg") center/cover no-repeat; position:relative; }
-    .wave{ position:absolute; left:0; right:0; bottom:-1px; height: 64px; display:block; }
-    .profile-panel{ background: var(--blue-panel); padding: 14px 16px 16px; color: #ffffff; position:relative; }
-    .profile-title{ margin:0; font-size: 22px; font-weight: 800; letter-spacing: .1px; color: #ffffff; }
-    .profile-address{ margin: 6px 0 0; font-size: 12.5px; color: rgba(255,255,255,.9); font-weight: 600; }
-    .profile-address a { color: inherit; text-decoration: none; transition: opacity 0.2s; }
-    .profile-address a:hover { opacity: 0.8; }
-    .panel-actions{ margin-top: 10px; display:flex; gap: 12px; }
-    .mini-ico{ width: 34px; height: 34px; display:grid; place-items:center; border-radius: 10px; background: rgba(255,255,255,.25); box-shadow: 0 10px 18px rgba(0,0,0,.12); border: 1px solid rgba(255,255,255,.25); text-decoration:none; transition: all 0.2s ease; }
-    .mini-ico:hover { background: rgba(255,255,255,.35); transform: translateY(-2px); box-shadow: 0 12px 22px rgba(0,0,0,.16); }
-    .mini-ico:active { transform: translateY(0) scale(0.95); }
-    .mini-ico svg{ width: 18px; height: 18px; fill: rgba(255,255,255,.95); }
-    .stack{ margin-top: 18px; display:flex; flex-direction:column; gap: 14px; }
-    .pill{ display:flex; align-items:center; justify-content:space-between; gap: 12px; padding: 14px 16px; border-radius: var(--pill-radius); background: var(--pill); color: var(--pill-text); text-decoration:none; box-shadow: var(--shadow-soft); transform: translateZ(0); border: 1px solid rgba(255,255,255,.12); -webkit-tap-highlight-color: transparent; transition: all 0.3s ease; }
-    .pill:hover{ background: var(--pill-dark); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,.22); }
-    .pill:active{ transform: scale(.98); transition: all 0.1s ease; }
-    .pill-left{ display:flex; align-items:center; gap: 12px; min-width: 0; }
-    .pill-icon{ width: 40px; height: 40px; border-radius: 12px; display:grid; place-items:center; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.16); flex: 0 0 auto; }
-    .pill-icon svg{ width: 22px; height: 22px; fill: #fff; }
-    .pill-texts{ min-width: 0; }
-    .pill-title{ font-weight: 800; letter-spacing: .1px; font-size: 15px; line-height: 1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .pill-sub{ margin-top: 3px; font-size: 12px; color: rgba(255,255,255,.82); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .pill-chevron{ width: 22px; height: 22px; flex: 0 0 auto; opacity: .9; transition: transform 0.3s ease; }
-    .pill:hover .pill-chevron { transform: translateX(3px); }
-    .signature{ margin-top: 18px; border-radius: 24px; overflow:hidden; background: var(--pill); box-shadow: var(--shadow-soft); }
-    .signature h2{ margin: 0; padding: 18px 16px 10px; text-align:center; font-size: 18px; font-weight: 900; letter-spacing: .7px; color: rgba(255,255,255,.95); text-transform: uppercase; }
-    .sig-grid{ padding: 10px 12px 14px; display:grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 18px; overflow:hidden; margin: 0 12px 14px; background: rgba(0,0,0,.18); }
-    .sig-item{ aspect-ratio: 1 / 1; overflow:hidden; position:relative; border: 2px solid rgba(126,58,166,.95); background: #111; }
-    .sig-item a{ display:block; width:100%; height:100%; transition: transform 0.4s ease; }
-    .sig-item a:hover { transform: scale(1.05); }
-    .sig-item a:active { transform: scale(0.98); }
-    .sig-item img{ width:100%; height:100%; object-fit:cover; display:block; filter: contrast(1.02) saturate(1.05); transition: filter 0.3s ease; }
-    .sig-item:hover img { filter: contrast(1.08) saturate(1.15) brightness(1.05); }
-    .fab-wrap{ position: fixed; left: 16px; bottom: calc(16px + var(--safe-bottom)); display:flex; gap: 10px; z-index: 20; }
-    .fab{ width: 44px; height: 44px; border-radius: 50%; background: rgba(18,18,22,.72); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(10px); box-shadow: 0 14px 30px rgba(0,0,0,.25); display:grid; place-items:center; cursor:pointer; -webkit-tap-highlight-color: transparent; transition: all 0.3s ease; }
-    .fab:hover { background: rgba(18,18,22,.85); transform: translateY(-2px); box-shadow: 0 16px 35px rgba(0,0,0,.3); }
-    .fab svg{ width: 20px; height: 20px; fill: rgba(255,255,255,.88); transition: fill 0.2s; }
-    .fab:active{ transform: scale(.95); transition: all 0.1s; }
-    .note{ margin-top: 12px; text-align:center; font-size: 12px; color: rgba(255,255,255,.72); min-height: 18px; transition: opacity 0.3s ease; }
-    .info-box { margin-top: 10px; background: rgba(255,255,255,0.85); padding: 10px 12px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .rating { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #0b0b0d; }
-    .hours summary { cursor: pointer; font-weight: 600; font-size: 13.5px; color: var(--pill); padding: 4px 0; transition: color 0.2s; }
-    .hours summary:hover { color: var(--pill-dark); }
-    .hours-list { margin-top: 6px; }
-    .hours-list > div { display: flex; justify-content: space-between; padding: 4px 6px; font-size: 12.5px; transition: background 0.2s; border-radius: 4px; }
-    .hours-list > div.today { background: rgba(126,58,166,0.1); font-weight: 700; }
-    .hours-list span:first-child { font-weight: 500; color: #0b0b0d; }
-    .hours-list span:last-child { color: var(--muted); }
-    .reviews-section { margin-top: 18px; background: rgba(255,255,255,0.9); border-radius: 18px; padding: 16px; box-shadow: var(--shadow-soft); }
-    .reviews-section h3 { margin: 0 0 12px 0; font-size: 16px; font-weight: 800; color: var(--text); }
-    .review-item { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
-    .review-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-    .review-author { font-weight: 600; font-size: 13px; color: var(--text); }
-    .review-stars { font-size: 11px; }
-    .review-text { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
-    @media (hover: none) { .sig-item a:hover { transform: none; } .sig-item:hover img { filter: contrast(1.02) saturate(1.05); } }
+
+    .wrap{ width:100%; max-width: var(--max); }
+
+    /* Accessibility */
+    :focus-visible{
+      outline: 3px solid rgba(126,58,166,.55);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+    @media (prefers-reduced-motion: reduce){
+      *{ transition:none !important; animation:none !important; scroll-behaviour:auto !important; }
+    }
+
+    /* Card shell */
+    .card{
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-2);
+      box-shadow: var(--shadow-1);
+      overflow:hidden;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      height: 250px;
+      background: #000;
+    }
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.01);
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.32) 45%, rgba(43,27,20,.78) 100%);
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      z-index:2;
+      color: #fff;
+    }
+    .brand{
+      margin:0;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: .2px;
+      line-height: 1.06;
+      text-shadow: 0 10px 24px rgba(0,0,0,.25);
+    }
+    .subline{
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: rgba(255,255,255,.88);
+      font-weight: 650;
+    }
+
+    .chips{
+      margin-top: 10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.95);
+      font-size: 12.5px;
+      font-weight: 650;
+      text-decoration:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .chip svg{ width: 16px; height: 16px; fill: rgba(255,255,255,.95); }
+
+    /* BODY CONTENT */
+    .body{
+      padding: 14px 14px 12px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+
+    /* Primary CTA */
+    .cta-primary{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--accent) 0%, #A24BE0 55%, #D27BFF 120%);
+      color: #fff;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 18px 40px rgba(126,58,166,.22);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cta-primary:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+    .cta-primary:active{ transform: scale(.99); }
+    .cta-left{ display:flex; align-items:center; gap: 12px; min-width:0; }
+    .cta-icon{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.18);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+    }
+    .cta-icon svg{ width: 22px; height: 22px; fill:#fff; }
+    .cta-text{ min-width:0; }
+    .cta-title{ font-weight: 900; font-size: 16px; letter-spacing:.1px; line-height:1.1; }
+    .cta-sub{ margin-top: 3px; font-size: 12.5px; color: rgba(255,255,255,.88); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .cta-arrow{ width: 22px; height: 22px; opacity:.95; }
+
+    /* Info block */
+    .info{
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-1);
+      padding: 12px;
+      box-shadow: var(--shadow-2);
+    }
+    .info-row{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .info-title{
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing:.1px;
+    }
+    .info-muted{
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    /* Hours */
+    details.hours{
+      margin-top: 10px;
+      border-top: 1px solid rgba(26,18,15,.08);
+      padding-top: 10px;
+    }
+    details.hours summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 13.5px;
+      color: var(--accent-2);
+      -webkit-tap-highlight-color: transparent;
+    }
+    details.hours summary::-webkit-details-marker{ display:none; }
+    .hours-chevron{
+      width: 18px; height: 18px;
+      fill: rgba(95,42,129,.9);
+      transition: transform .2s ease;
+    }
+    details[open] .hours-chevron{ transform: rotate(90deg); }
+
+    .hours-list{
+      margin-top: 10px;
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+    }
+    .hours-item{
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(26,18,15,.03);
+      border: 1px solid rgba(26,18,15,.06);
+      font-size: 12.5px;
+    }
+    .hours-item .day{ font-weight: 700; }
+    .hours-item .time{ color: var(--muted); }
+    .hours-item.today{
+      background: rgba(126,58,166,.08);
+      border-color: rgba(126,58,166,.18);
+    }
+    .hours-item.today .time{ color: rgba(26,18,15,.82); font-weight: 650; }
+
+    /* Link cards (calmer than pills) */
+    .links{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .link-card{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 12px 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow-2);
+      text-decoration:none;
+      color: var(--ink);
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+    }
+    .link-card:hover{ transform: translateY(-1px); background: rgba(255,255,255,.82); }
+    .link-card:active{ transform: scale(.99); }
+
+    .lc-left{ display:flex; align-items:center; gap: 12px; min-width:0; }
+    .lc-icon{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      background: rgba(126,58,166,.10);
+      border: 1px solid rgba(126,58,166,.18);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+    }
+    .lc-icon svg{ width: 20px; height: 20px; fill: var(--accent-2); }
+    .lc-text{ min-width:0; }
+    .lc-title{ font-weight: 900; font-size: 14.5px; letter-spacing:.1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .lc-sub{ margin-top: 3px; font-size: 12.5px; color: var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .lc-chevron{ width: 20px; height: 20px; fill: rgba(26,18,15,.45); }
+
+    /* Reviews */
+    .reviews{
+      background: rgba(255,255,255,.74);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-2);
+      box-shadow: var(--shadow-2);
+      padding: 14px;
+    }
+    .reviews h2{
+      margin:0 0 10px 0;
+      font-size: 15px;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .review{
+      display:flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(26,18,15,.08);
+    }
+    .review:first-of-type{ border-top: 0; padding-top: 0; }
+    .avatar{
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(43,27,20,.10);
+      border: 1px solid rgba(43,27,20,.10);
+      display:grid; place-items:center;
+      font-weight: 900;
+      color: rgba(43,27,20,.82);
+      flex: 0 0 auto;
+    }
+    .review-meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .review-name{
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .review-stars{
+      font-size: 12px;
+      color: rgba(26,18,15,.75);
+      white-space:nowrap;
+    }
+    .review-text{
+      margin-top: 4px;
+      font-size: 12.8px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* Signature carousel */
+    .signature{
+      background: rgba(255,255,255,.70);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-2);
+      box-shadow: var(--shadow-2);
+      padding: 14px;
+    }
+    .signature h2{
+      margin: 0 0 10px 0;
+      font-size: 15px;
+      font-weight: 950;
+      letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .hint{
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(26,18,15,.55);
+    }
+    .sig-track{
+      display:flex;
+      gap: 12px;
+      overflow-x:auto;
+      padding-bottom: 6px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .sig-track::-webkit-scrollbar{ height: 8px; }
+    .sig-track::-webkit-scrollbar-thumb{ background: rgba(26,18,15,.12); border-radius: 999px; }
+    .sig{
+      width: 168px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      text-decoration:none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sig-img{
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(26,18,15,.10);
+      background: #111;
+      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+    }
+    .sig-img img{
+      width:100%;
+      height: 168px;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.01);
+      transition: transform .25s ease, filter .25s ease;
+      filter: contrast(1.03) saturate(1.05);
+    }
+    .sig:hover .sig-img img{ transform: scale(1.04); filter: contrast(1.07) saturate(1.12) brightness(1.02); }
+    .sig:active .sig-img img{ transform: scale(1.01); }
+    .sig-cap{
+      margin-top: 8px;
+      font-size: 12.8px;
+      font-weight: 850;
+      color: rgba(26,18,15,.86);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Note toast */
+    .note{
+      margin-top: 8px;
+      min-height: 18px;
+      text-align:center;
+      font-size: 12.5px;
+      color: rgba(26,18,15,.70);
+    }
+
+    /* Sticky bottom bar */
+    .sticky{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: calc(12px + var(--safe-bottom));
+      width: calc(100% - 28px);
+      max-width: var(--max);
+      height: var(--sticky-h);
+      z-index: 30;
+    }
+    .sticky-inner{
+      height: 100%;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(26,18,15,.12);
+      box-shadow: 0 18px 40px rgba(0,0,0,.14);
+    }
+    .sbtn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      border-radius: 16px;
+      background: rgba(126,58,166,.10);
+      border: 1px solid rgba(126,58,166,.18);
+      color: rgba(26,18,15,.92);
+      font-weight: 900;
+      font-size: 13px;
+      text-decoration:none;
+      cursor:pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .16s ease, background .16s ease;
+    }
+    .sbtn:hover{ background: rgba(126,58,166,.14); transform: translateY(-1px); }
+    .sbtn:active{ transform: scale(.99); }
+    .sbtn svg{ width: 18px; height: 18px; fill: rgba(95,42,129,.95); }
+
+    /* Small helper spacing */
+    .spacer{ height: 6px; }
+
+    @media (hover: none){
+      .link-card:hover, .cta-primary:hover, .sig:hover .sig-img img, .sbtn:hover{ transform:none; }
+    }
   </style>
-  
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLHM2P3C7F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-ZLHM2P3C7F');
   </script>
+
+  <!-- Umami Analytics -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="bd86632a-3799-40d4-988d-02c0fde2ea1a"></script>
 </head>
 
 <body>
   <main class="wrap">
-    <section class="profile-card" aria-label="Business details">
-      <div class="profile-photo" role="img" aria-label="The Urban Chocolatier header image">
-        <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-          <path fill="#3B6F8C" d="M0,80 C240,140 420,20 720,70 C980,110 1140,40 1440,70 L1440,120 L0,120 Z"></path>
-        </svg>
-      </div>
+    <section class="card" aria-label="The Urban Chocolatier">
+      <header class="hero">
+        <img
+          src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg"
+          alt="The Urban Chocolatier desserts"
+          width="840"
+          height="500"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-content">
+          <h1 class="brand">The Urban Chocolatier</h1>
+          <p class="subline">393 High Rd, Wembley HA9 6AA</p>
 
-      <div class="profile-panel">
-        <h1 class="profile-title">The Urban Chocolatier</h1>
-        <p class="profile-address">
-          <a href="tel:+442070181150">📞 020 7018 1150</a> • 
-          <a href="https://www.google.com/maps/place/The+Urban+Chocolatier/@51.5534948,-0.2950961,17z" target="_blank" rel="noopener">393 High Rd, Wembley HA9 6AA</a>
-        </p>
-                  
-        <div class="info-box">
-          <div class="rating">⭐ 4.6 (1,997 reviews)</div>
-          <details class="hours">
-            <summary>Opening Hours</summary>
+          <div class="chips" aria-label="Key details">
+            <span class="chip" aria-label="Rating">
+              <!-- star -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.6 4.7 1.8 7.1z"/></svg>
+              4.6 (1,997)
+            </span>
+            <span class="chip" id="openChip" aria-label="Today's hours">
+              <!-- clock -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 11h5v-2h-4V7h-2v6z"/></svg>
+              Open today: —
+            </span>
+            <a class="chip" href="https://www.instagram.com/theurbanchocolatier" target="_blank" rel="noopener noreferrer" data-track="instagram_open" aria-label="Open Instagram">
+              <!-- instagram -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2C5.6 4 4 5.6 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6m9.65 1.5c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1M12 7c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5m0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="body">
+        <!-- Primary CTA -->
+        <a class="cta-primary" href="https://order.storekit.com/the-urban-chocolatier-wembley/menu" target="_blank" rel="noopener noreferrer" data-track="order_now_open" aria-label="Order now">
+          <div class="cta-left">
+            <div class="cta-icon" aria-hidden="true">
+              <!-- bag -->
+              <svg viewBox="0 0 24 24"><path d="M7 7V6a5 5 0 0 1 10 0v1h4l-1.2 14.2A2 2 0 0 1 17.8 23H6.2a2 2 0 0 1-2-1.8L3 7h4zm2 0h6V6a3 3 0 0 0-6 0v1z"/></svg>
+            </div>
+            <div class="cta-text">
+              <div class="cta-title">Order now</div>
+              <div class="cta-sub">Delivery or collection • Open late</div>
+            </div>
+          </div>
+          <svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <!-- Address + hours -->
+        <div class="info" aria-label="Location and opening hours">
+          <div class="info-row">
+            <div>
+              <div class="info-title">Visit us in Wembley</div>
+              <div class="info-muted">
+                <a href="https://www.google.com/maps/place/The+Urban+Chocolatier/@51.5534948,-0.2950961,17z" target="_blank" rel="noopener noreferrer" data-track="directions_open" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
+                  393 High Rd, Wembley HA9 6AA
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="info-title">Call</div>
+              <div class="info-muted">
+                <a href="tel:+442070181150" data-track="call_tap" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
+                  020 7018 1150
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <details class="hours" id="hoursDetails">
+            <summary>
+              Opening hours
+              <svg class="hours-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </summary>
             <div class="hours-list" id="hoursList">
-              <div data-day="0"><span>Sunday</span><span>12pm–1am</span></div>
-              <div data-day="1"><span>Monday</span><span>1pm–1am</span></div>
-              <div data-day="2"><span>Tuesday</span><span>1pm–1am</span></div>
-              <div data-day="3"><span>Wednesday</span><span>1pm–1am</span></div>
-              <div data-day="4"><span>Thursday</span><span>1pm–1am</span></div>
-              <div data-day="5"><span>Friday</span><span>1pm–2am</span></div>
-              <div data-day="6"><span>Saturday</span><span>12pm–2am</span></div>
+              <div class="hours-item" data-day="0"><span class="day">Sunday</span><span class="time">12pm–1am</span></div>
+              <div class="hours-item" data-day="1"><span class="day">Monday</span><span class="time">1pm–1am</span></div>
+              <div class="hours-item" data-day="2"><span class="day">Tuesday</span><span class="time">1pm–1am</span></div>
+              <div class="hours-item" data-day="3"><span class="day">Wednesday</span><span class="time">1pm–1am</span></div>
+              <div class="hours-item" data-day="4"><span class="day">Thursday</span><span class="time">1pm–1am</span></div>
+              <div class="hours-item" data-day="5"><span class="day">Friday</span><span class="time">1pm–2am</span></div>
+              <div class="hours-item" data-day="6"><span class="day">Saturday</span><span class="time">12pm–2am</span></div>
             </div>
           </details>
         </div>
 
-        <div class="panel-actions" aria-label="Quick actions">
-          <a class="mini-ico" href="tel:+442070181150" data-track="call" data-umami-event="call_tap" aria-label="Call">
-            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z"/></svg>
+        <!-- Secondary link cards -->
+        <nav class="links" aria-label="Quick links">
+          <a class="link-card" href="https://drive.google.com/file/d/1cYUIPV2PICYYkEvBJx7aYm1aqC_Q8vsA/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-track="menu_open">
+            <div class="lc-left">
+              <div class="lc-icon" aria-hidden="true">
+                <!-- document -->
+                <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5"/></svg>
+              </div>
+              <div class="lc-text">
+                <div class="lc-title">View menu</div>
+                <div class="lc-sub">Browse our desserts and drinks</div>
+              </div>
+            </div>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
           </a>
-          <a class="mini-ico" href="https://www.instagram.com/theurbanchocolatier" target="_blank" rel="noopener" data-track="instagram" data-umami-event="instagram_tap" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2C5.6 4 4 5.6 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6m9.65 1.5c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1M12 7c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5m0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/></svg>
+
+          <a class="link-card" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener noreferrer" data-track="review_open">
+            <div class="lc-left">
+              <div class="lc-icon" aria-hidden="true">
+                <!-- star -->
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.6 4.7 1.8 7.1z"/></svg>
+              </div>
+              <div class="lc-text">
+                <div class="lc-title">Leave a review</div>
+                <div class="lc-sub">We’d love your feedback</div>
+              </div>
+            </div>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
           </a>
-          <a class="mini-ico" href="https://www.google.com/maps/place/The+Urban+Chocolatier/@51.5534948,-0.2950961,17z" target="_blank" rel="noopener" data-track="map" data-umami-event="map_open" aria-label="Open location">
-            <svg viewBox="0 0 24 24"><path d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+
+          <a class="link-card" href="https://urbanchocolatier.com/" target="_blank" rel="noopener noreferrer" data-track="website_open">
+            <div class="lc-left">
+              <div class="lc-icon" aria-hidden="true">
+                <!-- globe -->
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z"/></svg>
+              </div>
+              <div class="lc-text">
+                <div class="lc-title">Visit our website</div>
+                <div class="lc-sub">Explore signature creations</div>
+              </div>
+            </div>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
           </a>
-        </div>
+
+          <a class="link-card" href="https://www.google.com/maps/place/The+Urban+Chocolatier/@51.5534948,-0.2950961,17z" target="_blank" rel="noopener noreferrer" data-track="maps_open">
+            <div class="lc-left">
+              <div class="lc-icon" aria-hidden="true">
+                <!-- pin -->
+                <svg viewBox="0 0 24 24"><path d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+              </div>
+              <div class="lc-text">
+                <div class="lc-title">Get directions</div>
+                <div class="lc-sub">Open in Google Maps</div>
+              </div>
+            </div>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+        </nav>
+
+        <!-- Reviews -->
+        <section class="reviews" aria-label="Recent reviews">
+          <h2>Recent reviews</h2>
+
+          <div class="review">
+            <div class="avatar" aria-hidden="true">SM</div>
+            <div style="min-width:0;flex:1;">
+              <div class="review-meta">
+                <div class="review-name">Sarah M.</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <div class="review-text">Amazing desserts! The chocolate profiteroles are unreal. Perfect late-night spot after Wembley events.</div>
+            </div>
+          </div>
+
+          <div class="review">
+            <div class="avatar" aria-hidden="true">JK</div>
+            <div style="min-width:0;flex:1;">
+              <div class="review-meta">
+                <div class="review-name">James K.</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <div class="review-text">Best dessert place in Wembley. Fresh, generous portions, and the signature combinations are spot on.</div>
+            </div>
+          </div>
+
+          <div class="review">
+            <div class="avatar" aria-hidden="true">RA</div>
+            <div style="min-width:0;flex:1;">
+              <div class="review-meta">
+                <div class="review-name">Riya A.</div>
+                <div class="review-stars">★★★★☆</div>
+              </div>
+              <div class="review-text">Great vibe and fast service. Loved the waffles — would definitely come back.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Signature carousel -->
+        <section class="signature" aria-label="Our signature desserts">
+          <h2>
+            Our signature
+            <span class="hint">Swipe</span>
+          </h2>
+
+          <div class="sig-track" role="list">
+            <a class="sig" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png" target="_blank" rel="noopener noreferrer" data-track="signature_profiteroles_open">
+              <div class="sig-img">
+                <img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png" alt="Chocolate profiteroles" width="365" height="365" loading="lazy">
+              </div>
+              <div class="sig-cap">Chocolate profiteroles</div>
+            </a>
+
+            <a class="sig" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png" target="_blank" rel="noopener noreferrer" data-track="signature_item_2_open">
+              <div class="sig-img">
+                <img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png" alt="Signature dessert" width="365" height="365" loading="lazy">
+              </div>
+              <div class="sig-cap">Signature creation</div>
+            </a>
+
+            <a class="sig" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png" target="_blank" rel="noopener noreferrer" data-track="signature_item_3_open">
+              <div class="sig-img">
+                <img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png" alt="Signature dessert" width="365" height="365" loading="lazy">
+              </div>
+              <div class="sig-cap">Waffles & drizzle</div>
+            </a>
+
+            <a class="sig" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png" target="_blank" rel="noopener noreferrer" data-track="signature_item_4_open">
+              <div class="sig-img">
+                <img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png" alt="Signature dessert" width="365" height="365" loading="lazy">
+              </div>
+              <div class="sig-cap">Chocolate delight</div>
+            </a>
+          </div>
+        </section>
+
+        <div class="note" id="note" aria-live="polite"></div>
       </div>
     </section>
+  </main>
 
-    <section class="stack" aria-label="Links">
-      <a class="pill" href="https://drive.google.com/file/d/1cYUIPV2PICYYkEvBJx7aYm1aqC_Q8vsA/view?usp=sharing" target="_blank" rel="noopener" data-track="menu" data-umami-event="menu_open">
-        <div class="pill-left">
-          <div class="pill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5"/></svg></div>
-          <div class="pill-texts"><div class="pill-title">Menu</div></div>
-        </div>
-        <svg class="pill-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
+  <!-- Sticky bottom actions -->
+  <div class="sticky" aria-label="Quick actions">
+    <div class="sticky-inner">
+      <a class="sbtn" href="tel:+442070181150" data-track="sticky_call_tap" aria-label="Call">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z"/></svg>
+        Call
       </a>
-      <a class="pill" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener" data-track="reviews" data-umami-event="reviews_open">
-        <div class="pill-left">
-          <div class="pill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.6 4.7 1.8 7.1z"/></svg></div>
-          <div class="pill-texts"><div class="pill-title">Reviews</div><div class="pill-sub">We love to hear your feedback</div></div>
-        </div>
-        <svg class="pill-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <a class="pill" href="https://order.storekit.com/the-urban-chocolatier-wembley/menu" target="_blank" rel="noopener" data-track="orders" data-umami-event="orders_open">
-        <div class="pill-left">
-          <div class="pill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7V6a5 5 0 0 1 10 0v1h4l-1.2 14.2A2 2 0 0 1 17.8 23H6.2a2 2 0 0 1-2-1.8L3 7h4zm2 0h6V6a3 3 0 0 0-6 0v1z"/></svg></div>
-          <div class="pill-texts"><div class="pill-title">Orders and menu</div><div class="pill-sub">Delivery or pickup</div></div>
-        </div>
-        <svg class="pill-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <a class="pill" href="https://urbanchocolatier.com/" target="_blank" rel="noopener" data-track="website" data-umami-event="website_open">
-        <div class="pill-left">
-          <div class="pill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z"/></svg></div>
-          <div class="pill-texts"><div class="pill-title">Website</div><div class="pill-sub">See our dessert selection</div></div>
-        </div>
-        <svg class="pill-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
-      </a>
-    </section>
 
-    <section class="reviews-section" aria-label="Recent reviews">
-      <h3>⭐ Recent Reviews</h3>
-      <div class="review-item">
-        <div class="review-header">
-          <div class="review-author">Sarah M.</div>
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        </div>
-        <div class="review-text">Amazing desserts! The chocolate profiteroles are to die for. Great late-night spot.</div>
-      </div>
-      <div class="review-item">
-        <div class="review-header">
-          <div class="review-author">James K.</div>
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        </div>
-        <div class="review-text">Best dessert place in Wembley! Fresh ingredients and creative combinations.</div>
-      </div>
-    </section>
+      <a class="sbtn" href="https://www.google.com/maps/place/The+Urban+Chocolatier/@51.5534948,-0.2950961,17z" target="_blank" rel="noopener noreferrer" data-track="sticky_directions_open" aria-label="Directions">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+        Directions
+      </a>
 
-    <section class="signature" aria-label="Our signature">
-      <h2>OUR SIGNATURE</h2>
-      <div class="sig-grid" role="list">
-        <div class="sig-item" role="listitem">
-          <a href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png" target="_blank" rel="noopener" data-track="sig_1" data-umami-event="signature_1_open">
-            <img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png" alt="Chocolate profiteroles" width="365" height="365" loading="lazy">
-          </a>
-        </div>
-        <div class="sig-item" role="listitem">
-          <a href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png" target="_blank" rel="noopener" data-track="sig_2" data-umami-event="signature_2_open">
-            <img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png" alt="Signature dessert" width="365" height="365" loading="lazy">
-          </a>
-        </div>
-        <div class="sig-item" role="listitem">
-          <a href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png" target="_blank" rel="noopener" data-track="sig_3" data-umami-event="signature_3_open">
-            <img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png" alt="Signature dessert" width="365" height="365" loading="lazy">
-          </a>
-        </div>
-        <div class="sig-item" role="listitem">
-          <a href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png" target="_blank" rel="noopener" data-track="sig_4" data-umami-event="signature_
+      <button class="sbtn" id="shareBtn" type="button" data-track="sticky_share" aria-label="Share">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.2-3.1c.1-.3.1-.7 0-1l6.2-3.1A3 3 0 1 0 14 7c0 .2 0 .4.1.6L7.9 10.7a3 3 0 1 0 0 2.6l6.2 3.1c-.1.2-.1.4-.1.6a3 3 0 1 0 3-3z"/></svg>
+        Share
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Unified tracking: Umami (if present) + GA event (if present)
+    function track(name) {
+      try {
+        if (window.umami && typeof window.umami.track === "function") {
+          window.umami.track(name);
+        }
+      } catch (e) {}
+
+      try {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", name, { event_category: "engagement" });
+        }
+      } catch (e) {}
+    }
+
+    document.querySelectorAll("[data-track]").forEach(el => {
+      el.addEventListener("click", () => track(el.getAttribute("data-track")));
+    });
+
+    // Highlight today's hours + set hero chip
+    (function initHours(){
+      const today = new Date().getDay(); // 0=Sun..6=Sat
+      const list = document.getElementById("hoursList");
+      const openChip = document.getElementById("openChip");
+      if (!list || !openChip) return;
+
+      const item = list.querySelector('[data-day="' + today + '"]');
+      if (item) {
+        item.classList.add("today");
+        const timeText = item.querySelector(".time")?.textContent?.trim() || "";
+        openChip.textContent = "Open today: " + timeText;
+      }
+    })();
+
+    // Share / copy fallback
+    const noteEl = document.getElementById("note");
+    const shareBtn = document.getElementById("shareBtn");
+
+    function toast(msg) {
+      if (!noteEl) return;
+      noteEl.textContent = msg;
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => { noteEl.textContent = ""; }, 1800);
+    }
+
+    shareBtn?.addEventListener("click", async () => {
+      track("share_click");
+      const url = window.location.href;
+      const title = "The Urban Chocolatier";
+
+      try {
+        if (navigator.share) {
+          await navigator.share({ title, url });
+          return;
+        }
+      } catch (e) {}
+
+      try {
+        await navigator.clipboard.writeText(url);
+        toast("Link copied.");
+      } catch (e) {
+        toast("Copy failed — select and copy the URL from the address bar.");
+      }
+    });
+  </script>
+</body>
+</html>
+```
