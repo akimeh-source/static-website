@@ -1,25 +1,31 @@
 <!doctype html>
 <html lang="en-GB">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#2B1B14" />
 
   <title>The Urban Chocolatier | Premium Desserts in Wembley</title>
-  <meta name="description" content="Experience luxury desserts at The Urban Chocolatier in Wembley. Famous for our chocolate profiteroles, waffles, and signature creations. Open late, delivery available." />
+  <meta name="description"
+    content="Experience luxury desserts at The Urban Chocolatier in Wembley. Famous for our chocolate profiteroles, waffles, and signature creations. Open late, delivery available." />
 
   <meta property="og:title" content="The Urban Chocolatier | Premium Desserts in Wembley" />
-  <meta property="og:description" content="Experience luxury desserts at The Urban Chocolatier. Famous for our chocolate profiteroles and signature creations." />
+  <meta property="og:description"
+    content="Experience luxury desserts at The Urban Chocolatier. Famous for our chocolate profiteroles and signature creations." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
+  <meta property="og:image"
+    content="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
   <meta property="og:url" content="https://ucwembley.2--y.com/" />
   <meta property="og:site_name" content="The Urban Chocolatier" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261.jpeg?t=1708449747" />
+  <link rel="icon"
+    href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261.jpeg?t=1708449747" />
 
   <link rel="preconnect" href="https://cdn0030.qrcodechimp.com" crossorigin>
-  <link rel="preload" as="image" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
+  <link rel="preload" as="image"
+    href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
 
   <!-- Use your exact Google Maps link everywhere -->
   <script>
@@ -63,342 +69,516 @@
   </script>
 
   <style>
-    :root{
-      --bg-1:#FFF3F3;
-      --bg-2:#F6E9FF;
-      --bg-3:#FFE7D9;
-      --ink:#1a120f;
-      --muted:rgba(26,18,15,.68);
-      --surface:rgba(255,255,255,.78);
-      --stroke:rgba(26,18,15,.10);
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
 
-      --accent:#7E3AA6;
-      --accent-2:#5f2a81;
-
-      --radius-1:18px;
-      --radius-2:22px;
-      --radius-pill:999px;
-
-      --shadow-1: 0 14px 30px rgba(0,0,0,.12);
-      --shadow-2: 0 10px 24px rgba(0,0,0,.10);
-
+    :root {
+      --bg: #1C1115;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --text: #FDF8F5;
+      --text-muted: rgba(253, 248, 245, 0.7);
+      --text-dim: rgba(253, 248, 245, 0.45);
+      --accent: #D4AF37;
+      --accent-2: #B8973A;
+      --primary: #9B5DE5;
+      --primary-dark: #5f2a81;
+      --stroke: rgba(255, 255, 255, 0.1);
+      --radius-1: 18px;
+      --radius-2: 22px;
+      --radius-pill: 999px;
+      --shadow-1: 0 14px 30px rgba(0, 0, 0, .35);
+      --shadow-2: 0 10px 24px rgba(0, 0, 0, .25);
       --max: 420px;
       --safe-bottom: max(env(safe-area-inset-bottom, 0px), 10px);
       --sticky-h: 74px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Outfit', system-ui, sans-serif;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
-      color: var(--ink);
-      display:flex;
-      justify-content:center;
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
       padding: 18px 14px calc(18px + var(--safe-bottom));
-      background:
-        radial-gradient(900px 600px at 18% 10%, rgba(255,255,255,.55), transparent 60%),
-        radial-gradient(700px 500px at 90% 18%, rgba(255,255,255,.30), transparent 55%),
-        radial-gradient(900px 700px at 78% 40%, rgba(255,255,255,.20), transparent 60%),
-        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 34%, var(--bg-3) 64%, #F3E7FF 100%);
+      background: var(--bg);
+      background-image:
+        radial-gradient(circle at 10% 0%, var(--primary-dark) 0%, transparent 40%),
+        radial-gradient(circle at 90% 15%, #422015 0%, transparent 35%),
+        linear-gradient(180deg, #2E1A23 0%, var(--bg) 40%, #12090C 100%);
+      background-attachment: fixed;
     }
 
-    .wrap{
-      width:100%;
+    .wrap {
+      width: 100%;
       max-width: var(--max);
       padding-bottom: calc(var(--sticky-h) + 24px + var(--safe-bottom));
     }
 
-    :focus-visible{
-      outline: 3px solid rgba(126,58,166,.55);
+    :focus-visible {
+      outline: 3px solid rgba(126, 58, 166, .55);
       outline-offset: 3px;
       border-radius: 12px;
     }
 
-    .card{
-      background: var(--surface);
-      backdrop-filter: blur(10px);
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--stroke);
       border-radius: var(--radius-2);
       box-shadow: var(--shadow-1);
-      overflow:hidden;
+      overflow: hidden;
     }
 
-    .hero{
-      position:relative;
+    .hero {
+      position: relative;
       height: 250px;
       background: #000;
       cursor: zoom-in;
-      display:block;
-      text-decoration:none;
+      display: block;
+      text-decoration: none;
       color: inherit;
     }
-    .hero img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
       transform: scale(1.01);
     }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.32) 45%, rgba(43,27,20,.78) 100%);
-      pointer-events:none;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .12) 0%, rgba(0, 0, 0, .32) 45%, rgba(43, 27, 20, .78) 100%);
+      pointer-events: none;
     }
 
-    .hero-content{
-      position:absolute;
+    .hero-content {
+      position: absolute;
       left: 16px;
       right: 16px;
       bottom: 14px;
-      z-index:2;
+      z-index: 2;
       color: #fff;
     }
-    .brand{
-      margin:0;
+
+    .brand {
+      margin: 0;
       font-size: 26px;
       font-weight: 900;
       letter-spacing: .2px;
       line-height: 1.06;
-      text-shadow: 0 10px 24px rgba(0,0,0,.25);
+      text-shadow: 0 10px 24px rgba(0, 0, 0, .25);
     }
-    .subline{
+
+    .subline {
       margin: 6px 0 0;
       font-size: 13px;
-      color: rgba(255,255,255,.88);
+      color: rgba(255, 255, 255, .88);
       font-weight: 650;
     }
 
-    .chips{
+    .chips {
       margin-top: 10px;
-      display:flex;
-      flex-wrap:wrap;
+      display: flex;
+      flex-wrap: wrap;
       gap: 8px;
     }
-    .chip{
-      display:inline-flex;
-      align-items:center;
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
       padding: 8px 10px;
       border-radius: var(--radius-pill);
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(255,255,255,.20);
-      color: rgba(255,255,255,.95);
+      background: rgba(0, 0, 0, .25);
+      border: 1px solid rgba(255, 255, 255, .20);
+      color: rgba(255, 255, 255, .95);
       font-size: 12.5px;
       font-weight: 650;
-      text-decoration:none;
+      text-decoration: none;
       -webkit-tap-highlight-color: transparent;
     }
-    .chip svg{ width: 16px; height: 16px; fill: rgba(255,255,255,.95); }
 
-    .body{
+    .chip svg {
+      width: 16px;
+      height: 16px;
+      fill: rgba(255, 255, 255, .95);
+    }
+
+    .body {
       padding: 14px 14px 12px;
-      display:flex;
-      flex-direction:column;
+      display: flex;
+      flex-direction: column;
       gap: 12px;
       padding-bottom: calc(var(--sticky-h) + 24px + var(--safe-bottom));
     }
 
-      .cta-primary{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .cta-primary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
       padding: 10px 12px;
       border-radius: 16px;
       background: linear-gradient(135deg, var(--accent) 0%, #A24BE0 55%, #D27BFF 120%);
       color: #fff;
-      text-decoration:none;
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 18px 40px rgba(126,58,166,.22);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, .18);
+      box-shadow: 0 18px 40px rgba(126, 58, 166, .22);
       -webkit-tap-highlight-color: transparent;
     }
-    .cta-left{ display:flex; align-items:center; gap: 10px; min-width:0; }
-    .cta-icon{
-      width: 38px; height: 38px;
+
+    .cta-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .cta-icon {
+      width: 38px;
+      height: 38px;
       border-radius: 12px;
-      background: rgba(255,255,255,.16);
-      border: 1px solid rgba(255,255,255,.18);
-      display:grid; place-items:center;
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .18);
+      display: grid;
+      place-items: center;
       flex: 0 0 auto;
     }
-    .cta-icon svg{ width: 20px; height: 20px; fill:#fff; }
-    .cta-title{ font-weight: 900; font-size: 15px; }
-    .cta-sub{ margin-top: 2px; font-size: 12px; color: rgba(255,255,255,.88); }
-    .cta-arrow{ width: 18px; height: 18px; flex-shrink: 0; }
 
-    .info{
-      background: rgba(255,255,255,.72);
+    .cta-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    .cta-title {
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .cta-sub {
+      margin-top: 2px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .88);
+    }
+
+    .cta-arrow {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .info {
+      background: var(--bg-card);
       border: 1px solid var(--stroke);
       border-radius: var(--radius-1);
       padding: 12px;
       box-shadow: var(--shadow-2);
     }
-    .info-row{
-      display:flex;
-      justify-content:space-between;
-      gap: 12px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-    }
-    .info-title{ font-weight: 900; font-size: 14px; }
-    .info-muted{ margin-top: 4px; font-size: 12.5px; color: var(--muted); }
 
-    details.hours{ margin-top: 10px; border-top: 1px solid rgba(26,18,15,.08); padding-top: 10px; }
-    details.hours summary{
-      list-style:none;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .info-title {
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .info-muted {
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    details.hours {
+      margin-top: 10px;
+      border-top: 1px solid var(--stroke);
+      padding-top: 10px;
+    }
+
+    details.hours summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
       font-weight: 800;
       font-size: 13.5px;
-      color: var(--accent-2);
+      color: var(--accent);
     }
-    details.hours summary::-webkit-details-marker{ display:none; }
-    .hours-chevron{ width: 18px; height: 18px; fill: rgba(95,42,129,.9); }
-    .hours-list{ margin-top: 10px; display:flex; flex-direction:column; gap: 6px; }
-    .hours-item{
-      display:flex;
-      justify-content:space-between;
+
+    details.hours summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .hours-chevron {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent);
+    }
+
+    .hours-list {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
       gap: 10px;
       padding: 8px 10px;
       border-radius: 12px;
-      background: rgba(26,18,15,.03);
-      border: 1px solid rgba(26,18,15,.06);
+      background: rgba(26, 18, 15, .03);
+      border: 1px solid rgba(26, 18, 15, .06);
       font-size: 12.5px;
     }
-    .hours-item .day{ font-weight: 700; }
-    .hours-item .time{ color: var(--muted); }
-    .hours-item.today{
-      background: rgba(126,58,166,.08);
-      border-color: rgba(126,58,166,.18);
+
+    .hours-item .day {
+      font-weight: 700;
     }
 
-    .links{ display:flex; flex-direction:column; gap: 10px; }
-    .link-card{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .hours-item .time {
+      color: var(--muted);
+    }
+
+    .hours-item.today {
+      background: rgba(126, 58, 166, .08);
+      border-color: rgba(126, 58, 166, .18);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
       padding: 12px 12px;
       border-radius: 18px;
-      background: rgba(255,255,255,.72);
+      background: var(--bg-card);
       border: 1px solid var(--stroke);
       box-shadow: var(--shadow-2);
-      text-decoration:none;
-      color: var(--ink);
+      text-decoration: none;
+      color: var(--text);
       -webkit-tap-highlight-color: transparent;
     }
-    .lc-left{ display:flex; align-items:center; gap: 12px; min-width:0; }
-    .lc-icon{
-      width: 42px; height: 42px;
+
+    .lc-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .lc-icon {
+      width: 42px;
+      height: 42px;
       border-radius: 14px;
-      background: rgba(126,58,166,.10);
-      border: 1px solid rgba(126,58,166,.18);
-      display:grid; place-items:center;
+      background: rgba(126, 58, 166, .10);
+      border: 1px solid rgba(126, 58, 166, .18);
+      display: grid;
+      place-items: center;
       flex: 0 0 auto;
     }
-    .lc-icon svg{ width: 20px; height: 20px; fill: var(--accent-2); }
-    .lc-title{ font-weight: 900; font-size: 14.5px; }
-    .lc-sub{ margin-top: 3px; font-size: 12.5px; color: var(--muted); }
-    .lc-chevron{ width: 20px; height: 20px; fill: rgba(26,18,15,.45); }
 
-    .reviews{
-      background: rgba(255,255,255,.74);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius-2);
-      box-shadow: var(--shadow-2);
-      padding: 14px;
+    .lc-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--accent-2);
     }
-    .reviews h2{ margin:0 0 10px 0; font-size: 15px; font-weight: 950; }
-    .review{ display:flex; gap: 10px; padding: 10px 0; border-top: 1px solid rgba(26,18,15,.08); }
-    .review:first-of-type{ border-top: 0; padding-top: 0; }
-    .avatar{
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: rgba(43,27,20,.10);
-      border: 1px solid rgba(43,27,20,.10);
-      display:grid; place-items:center;
+
+    .lc-title {
       font-weight: 900;
-      color: rgba(43,27,20,.82);
+      font-size: 14.5px;
+    }
+
+    .lc-sub {
+      margin-top: 3px;
+      font-size: 12.5px;
+      color: var(--text-dim);
+    }
+
+    .lc-chevron {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-dim);
+    }
+
+    .reviews {
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-2);
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .reviews h2 {
+      margin: 0 0 12px 0;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .review {
+      display: flex;
+      gap: 10px;
+      padding: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      margin-bottom: 10px;
+    }
+
+    .review:last-child {
+      margin-bottom: 0;
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FFF8E7 0%, var(--accent) 100%);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 11px;
+      color: #3b2812;
       flex: 0 0 auto;
     }
-    .review-meta{ display:flex; align-items:center; justify-content:space-between; gap: 10px; }
-    .review-name{ font-size: 13px; font-weight: 800; }
-    .review-stars{ font-size: 12px; color: rgba(26,18,15,.75); }
-    .review-text{ margin-top: 4px; font-size: 12.8px; color: var(--muted); line-height: 1.45; }
 
-    .signature{
-      background: rgba(255,255,255,.70);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius-2);
-      box-shadow: var(--shadow-2);
-      padding: 14px;
-    }
-    .signature h2{
-      margin: 0 0 10px 0;
-      font-size: 15px;
-      font-weight: 950;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .review-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
     }
-    .hint{ font-size: 12px; font-weight: 700; color: rgba(26,18,15,.55); }
 
-    .sig-track{
-      display:flex;
+    .review-name {
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .review-stars {
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .review-text {
+      margin-top: 4px;
+      font-size: 12.8px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .signature {
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-2);
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .signature h2 {
+      margin: 0 0 12px 0;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .hint {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sig-track {
+      display: flex;
       gap: 12px;
-      overflow-x:auto;
+      overflow-x: auto;
       padding-bottom: 6px;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
     }
-    .sig{
+
+    .sig {
       width: 168px;
       flex: 0 0 auto;
       scroll-snap-align: start;
-      text-decoration:none;
+      text-decoration: none;
       color: inherit;
       -webkit-tap-highlight-color: transparent;
     }
-    .sig-img{
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(26,18,15,.10);
-      background: #111;
-      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+
+    .sig-img {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--stroke);
+      background: #0a0506;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .35);
     }
-    .sig-img img{
-      width:100%;
+
+    .sig-img img {
+      width: 100%;
       height: 168px;
-      object-fit:cover;
-      display:block;
+      object-fit: cover;
+      display: block;
       transform: scale(1.01);
       filter: contrast(1.03) saturate(1.05);
     }
-    .sig-cap{
+
+    .sig-cap {
       margin-top: 8px;
-      font-size: 12.8px;
-      font-weight: 850;
-      color: rgba(26,18,15,.86);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .note{
+    .note {
       margin-top: 8px;
       min-height: 18px;
-      text-align:center;
+      text-align: center;
       font-size: 12.5px;
-      color: rgba(26,18,15,.70);
+      color: var(--text-dim);
     }
 
-    .sticky{
+    .sticky {
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
@@ -408,75 +588,98 @@
       height: var(--sticky-h);
       z-index: 30;
     }
-    .sticky-inner{
+
+    .sticky-inner {
       height: 100%;
-      display:grid;
+      display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
       padding: 10px;
       border-radius: 22px;
-      background: rgba(255,255,255,.62);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(26,18,15,.12);
-      box-shadow: 0 -10px 30px rgba(0,0,0,.08), 0 18px 40px rgba(0,0,0,.12);
+      background: rgba(22, 12, 16, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, .15);
+      box-shadow: 0 -8px 24px rgba(0, 0, 0, .2), 0 12px 32px rgba(0, 0, 0, .35);
     }
-    .sbtn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 8px;
-      border-radius: 16px;
-      background: rgba(126,58,166,.10);
-      border: 1px solid rgba(126,58,166,.18);
-      color: rgba(26,18,15,.92);
-      font-weight: 900;
-      font-size: 13px;
-      text-decoration:none;
-      cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
+
+    .sbtn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      border-radius: 14px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 10px;
+      text-decoration: none;
+      cursor: pointer;
     }
-    .sbtn svg{ width: 18px; height: 18px; fill: rgba(95,42,129,.95); }
+
+    .sbtn:active {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+    }
+
+    .sbtn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
 
     /* Lightbox */
-    .lightbox{
+    .lightbox {
       position: fixed;
       inset: 0;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 18px;
-      background: rgba(0,0,0,.66);
+      background: rgba(0, 0, 0, .66);
       backdrop-filter: blur(6px);
       z-index: 999;
     }
-    .lightbox.open{ display:flex; }
-    .lb-close{
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lb-close {
       position: absolute;
       top: calc(12px + env(safe-area-inset-top, 0px));
       right: 12px;
       width: 44px;
       height: 44px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: rgba(0, 0, 0, .35);
       color: #fff;
       font-size: 28px;
       line-height: 1;
       cursor: pointer;
     }
-    .lb-figure{ margin: 0; width: min(92vw, 520px); }
-    .lb-figure img{
+
+    .lb-figure {
+      margin: 0;
+      width: min(92vw, 520px);
+    }
+
+    .lb-figure img {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 18px;
-      box-shadow: 0 22px 70px rgba(0,0,0,.38);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, .38);
       background: #111;
     }
-    .lb-cap{
+
+    .lb-cap {
       margin-top: 10px;
       text-align: centre;
-      color: rgba(255,255,255,.92);
+      color: rgba(255, 255, 255, .92);
       font-size: 13px;
       font-weight: 650;
     }
@@ -485,7 +688,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLHM2P3C7F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-ZLHM2P3C7F');
   </script>
@@ -497,26 +700,27 @@
   <main class="wrap">
     <section class="card" aria-label="The Urban Chocolatier">
 
-      <a class="hero js-lightbox" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" aria-label="View hero image">
+      <a class="hero js-lightbox"
+        href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg"
+        aria-label="View hero image">
         <img
           src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg"
-          alt="The Urban Chocolatier desserts"
-          width="840"
-          height="500"
-          loading="eager"
-          fetchpriority="high"
-        />
+          alt="The Urban Chocolatier desserts" width="840" height="500" loading="eager" fetchpriority="high" />
         <div class="hero-content">
           <h1 class="brand">The Urban Chocolatier</h1>
           <p class="subline">393 High Rd, Wembley HA9 6AA</p>
 
           <div class="chips" aria-label="Key details">
             <span class="chip" aria-label="Rating">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.6 4.7 1.8 7.1z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.6 4.7 1.8 7.1z" />
+              </svg>
               4.6 (1,997)
             </span>
             <span class="chip" id="openChip" aria-label="Today's hours">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 11h5v-2h-4V7h-2v6z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 11h5v-2h-4V7h-2v6z" />
+              </svg>
               Open today: —
             </span>
           </div>
@@ -524,17 +728,23 @@
       </a>
 
       <div class="body">
-        <a class="cta-primary" href="https://order.storekit.com/the-urban-chocolatier-wembley/menu" target="_blank" rel="noopener noreferrer" data-track="order_now_open" aria-label="Order now">
+        <a class="cta-primary" href="https://order.storekit.com/the-urban-chocolatier-wembley/menu" target="_blank"
+          rel="noopener noreferrer" data-track="order_now_open" aria-label="Order now">
           <div class="cta-left">
             <div class="cta-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 7V6a5 5 0 0 1 10 0v1h4l-1.2 14.2A2 2 0 0 1 17.8 23H6.2a2 2 0 0 1-2-1.8L3 7h4zm2 0h6V6a3 3 0 0 0-6 0v1z"/></svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M7 7V6a5 5 0 0 1 10 0v1h4l-1.2 14.2A2 2 0 0 1 17.8 23H6.2a2 2 0 0 1-2-1.8L3 7h4zm2 0h6V6a3 3 0 0 0-6 0v1z" />
+              </svg>
             </div>
             <div>
               <div class="cta-title">Order now</div>
               <div class="cta-sub">Delivery or collection • Open late</div>
             </div>
           </div>
-          <svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M9 18l6-6-6-6"/></svg>
+          <svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="white" d="M9 18l6-6-6-6" />
+          </svg>
         </a>
 
         <div class="info" aria-label="Location and opening hours">
@@ -542,7 +752,8 @@
             <div>
               <div class="info-title">Visit us in Wembley</div>
               <div class="info-muted">
-                <a class="maps-link" href="#" target="_blank" rel="noopener noreferrer" data-track="directions_open" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
+                <a class="maps-link" href="#" target="_blank" rel="noopener noreferrer" data-track="directions_open"
+                  style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
                   393 High Rd, Wembley HA9 6AA
                 </a>
               </div>
@@ -550,7 +761,8 @@
             <div>
               <div class="info-title">Call</div>
               <div class="info-muted">
-                <a href="tel:+442070181150" data-track="call_tap" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
+                <a href="tel:+442070181150" data-track="call_tap"
+                  style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
                   020 7018 1150
                 </a>
               </div>
@@ -560,71 +772,101 @@
           <details class="hours">
             <summary>
               Opening hours
-              <svg class="hours-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              <svg class="hours-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
             </summary>
             <div class="hours-list" id="hoursList">
-              <div class="hours-item" data-day="0"><span class="day">Sunday</span><span class="time">12pm–1.15am</span></div>
-              <div class="hours-item" data-day="1"><span class="day">Monday</span><span class="time">1pm–1.15am</span></div>
-              <div class="hours-item" data-day="2"><span class="day">Tuesday</span><span class="time">1pm–1.15am</span></div>
-              <div class="hours-item" data-day="3"><span class="day">Wednesday</span><span class="time">1pm–1.15am</span></div>
-              <div class="hours-item" data-day="4"><span class="day">Thursday</span><span class="time">1pm–1.15am</span></div>
-              <div class="hours-item" data-day="5"><span class="day">Friday</span><span class="time">1pm–2.15am</span></div>
-              <div class="hours-item" data-day="6"><span class="day">Saturday</span><span class="time">12pm–2.15am</span></div>
+              <div class="hours-item" data-day="0"><span class="day">Sunday</span><span class="time">12pm–1.15am</span>
+              </div>
+              <div class="hours-item" data-day="1"><span class="day">Monday</span><span class="time">1pm–1.15am</span>
+              </div>
+              <div class="hours-item" data-day="2"><span class="day">Tuesday</span><span class="time">1pm–1.15am</span>
+              </div>
+              <div class="hours-item" data-day="3"><span class="day">Wednesday</span><span
+                  class="time">1pm–1.15am</span></div>
+              <div class="hours-item" data-day="4"><span class="day">Thursday</span><span class="time">1pm–1.15am</span>
+              </div>
+              <div class="hours-item" data-day="5"><span class="day">Friday</span><span class="time">1pm–2.15am</span>
+              </div>
+              <div class="hours-item" data-day="6"><span class="day">Saturday</span><span
+                  class="time">12pm–2.15am</span></div>
             </div>
           </details>
         </div>
 
         <nav class="links" aria-label="Quick links">
-          <a class="link-card" href="https://drive.google.com/file/d/1cYUIPV2PICYYkEvBJx7aYm1aqC_Q8vsA/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-track="menu_open">
+          <a class="link-card" href="https://drive.google.com/file/d/1cYUIPV2PICYYkEvBJx7aYm1aqC_Q8vsA/view?usp=sharing"
+            target="_blank" rel="noopener noreferrer" data-track="menu_open">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5"/></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" />
+                </svg>
               </div>
               <div>
                 <div class="lc-title">View menu</div>
                 <div class="lc-sub">Browse our desserts and drinks</div>
               </div>
             </div>
-            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </a>
 
-          <a class="link-card" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener noreferrer" data-track="review_open">
+          <a class="link-card" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener noreferrer"
+            data-track="review_open">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.6 4.7 1.8 7.1z"/></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.6 4.7 1.8 7.1z" />
+                </svg>
               </div>
               <div>
                 <div class="lc-title">Leave a review</div>
                 <div class="lc-sub">We’d love your feedback</div>
               </div>
             </div>
-            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </a>
 
-          <a class="link-card" href="https://urbanchocolatier.com/" target="_blank" rel="noopener noreferrer" data-track="website_open">
+          <a class="link-card" href="https://urbanchocolatier.com/" target="_blank" rel="noopener noreferrer"
+            data-track="website_open">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z"/></svg>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z" />
+                </svg>
               </div>
               <div>
                 <div class="lc-title">Visit our website</div>
                 <div class="lc-sub">Explore signature creations</div>
               </div>
             </div>
-            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </a>
 
           <a class="link-card maps-link" href="#" target="_blank" rel="noopener noreferrer" data-track="maps_open">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z" />
+                </svg>
               </div>
               <div>
                 <div class="lc-title">Get directions</div>
                 <div class="lc-sub">Open in Google Maps</div>
               </div>
             </div>
-            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </a>
         </nav>
 
@@ -638,7 +880,8 @@
                 <div class="review-name">Sarah M.</div>
                 <div class="review-stars">★★★★★</div>
               </div>
-              <div class="review-text">Amazing desserts! The chocolate profiteroles are unreal. Perfect late-night spot after Wembley events.</div>
+              <div class="review-text">Amazing desserts! The chocolate profiteroles are unreal. Perfect late-night spot
+                after Wembley events.</div>
             </div>
           </div>
 
@@ -649,7 +892,8 @@
                 <div class="review-name">James K.</div>
                 <div class="review-stars">★★★★★</div>
               </div>
-              <div class="review-text">Best dessert place in Wembley. Fresh, generous portions, and the signature combinations are spot on.</div>
+              <div class="review-text">Best dessert place in Wembley. Fresh, generous portions, and the signature
+                combinations are spot on.</div>
             </div>
           </div>
 
@@ -660,7 +904,8 @@
                 <div class="review-name">Riya A.</div>
                 <div class="review-stars">★★★★☆</div>
               </div>
-              <div class="review-text">Great vibe and fast service. Loved the waffles — would definitely come back.</div>
+              <div class="review-text">Great vibe and fast service. Loved the waffles — would definitely come back.
+              </div>
             </div>
           </div>
         </section>
@@ -668,20 +913,33 @@
         <section class="signature" aria-label="Our signature desserts">
           <h2>Our signature <span class="hint">Swipe</span></h2>
           <div class="sig-track" role="list">
-            <a class="sig js-lightbox" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png" rel="noopener noreferrer">
-              <div class="sig-img"><img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png" alt="Chocolate profiteroles" width="365" height="365" loading="lazy"></div>
+            <a class="sig js-lightbox" role="listitem"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png"
+              rel="noopener noreferrer">
+              <div class="sig-img"><img
+                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png"
+                  alt="Chocolate profiteroles" width="365" height="365" loading="lazy"></div>
               <div class="sig-cap">Chocolate profiteroles</div>
             </a>
-            <a class="sig js-lightbox" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png" rel="noopener noreferrer">
-              <div class="sig-img"><img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png" alt="Signature creation" width="365" height="365" loading="lazy"></div>
+            <a class="sig js-lightbox" role="listitem"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png"
+              rel="noopener noreferrer">
+              <div class="sig-img"><img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png"
+                  alt="Signature creation" width="365" height="365" loading="lazy"></div>
               <div class="sig-cap">Signature creation</div>
             </a>
-            <a class="sig js-lightbox" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png" rel="noopener noreferrer">
-              <div class="sig-img"><img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png" alt="Waffles & drizzle" width="365" height="365" loading="lazy"></div>
+            <a class="sig js-lightbox" role="listitem"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png"
+              rel="noopener noreferrer">
+              <div class="sig-img"><img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png"
+                  alt="Waffles & drizzle" width="365" height="365" loading="lazy"></div>
               <div class="sig-cap">Waffles & drizzle</div>
             </a>
-            <a class="sig js-lightbox" role="listitem" href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png" rel="noopener noreferrer">
-              <div class="sig-img"><img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png" alt="Chocolate delight" width="365" height="365" loading="lazy"></div>
+            <a class="sig js-lightbox" role="listitem"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png"
+              rel="noopener noreferrer">
+              <div class="sig-img"><img src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png"
+                  alt="Chocolate delight" width="365" height="365" loading="lazy"></div>
               <div class="sig-cap">Chocolate delight</div>
             </a>
           </div>
@@ -695,17 +953,26 @@
   <div class="sticky" aria-label="Quick actions">
     <div class="sticky-inner">
       <a class="sbtn" href="tel:+442070181150" aria-label="Call">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z" />
+        </svg>
         Call
       </a>
 
       <a class="sbtn maps-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Directions">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z" />
+        </svg>
         Directions
       </a>
 
       <button class="sbtn" id="shareBtn" type="button" aria-label="Share">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.2-3.1c.1-.3.1-.7 0-1l6.2-3.1A3 3 0 1 0 14 7c0 .2 0 .4.1.6L7.9 10.7a3 3 0 1 0 0 2.6l6.2 3.1c-.1.2-.1.4-.1.6a3 3 0 1 0 3-3z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M18 16a3 3 0 0 0-2.4 1.2l-6.2-3.1c.1-.3.1-.7 0-1l6.2-3.1A3 3 0 1 0 14 7c0 .2 0 .4.1.6L7.9 10.7a3 3 0 1 0 0 2.6l6.2 3.1c-.1.2-.1.4-.1.6a3 3 0 1 0 3-3z" />
+        </svg>
         Share
       </button>
     </div>
@@ -721,13 +988,13 @@
 
   <script>
     // Set all maps links from one constant
-    (function(){
+    (function () {
       const url = window.UC_MAPS_URL;
       document.querySelectorAll("a.maps-link").forEach(a => a.href = url);
     })();
 
     // Highlight today's hours + set hero chip
-    (function initHours(){
+    (function initHours() {
       const today = new Date().getDay(); // 0=Sun..6=Sat
       const list = document.getElementById("hoursList");
       const openChip = document.getElementById("openChip");
@@ -763,7 +1030,7 @@
           await navigator.share({ title, url });
           return;
         }
-      } catch (e) {}
+      } catch (e) { }
 
       try {
         await navigator.clipboard.writeText(url);
@@ -774,13 +1041,13 @@
     });
 
     // Lightbox
-    (function(){
+    (function () {
       const lb = document.getElementById("lightbox");
       const lbImg = document.getElementById("lbImg");
       const lbCap = document.getElementById("lbCap");
       const lbClose = document.getElementById("lbClose");
 
-      function openLightbox(src, caption){
+      function openLightbox(src, caption) {
         lbImg.src = src;
         lbImg.alt = caption || "Image";
         lbCap.textContent = caption || "";
@@ -789,7 +1056,7 @@
         document.documentElement.style.overflow = "hidden";
       }
 
-      function closeLightbox(){
+      function closeLightbox() {
         lb.classList.remove("open");
         lb.setAttribute("aria-hidden", "true");
         document.documentElement.style.overflow = "";
@@ -815,4 +1082,5 @@
     })();
   </script>
 </body>
+
 </html>
