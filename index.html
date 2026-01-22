@@ -795,7 +795,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
           <div class="cta-left">
             <div class="cta-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
-                <path
+                <path onclick="umami.track('order-now'); fbq('trackCustom', 'OrderNow');"
                   d="M7 7V6a5 5 0 0 1 10 0v1h4l-1.2 14.2A2 2 0 0 1 17.8 23H6.2a2 2 0 0 1-2-1.8L3 7h4zm2 0h6V6a3 3 0 0 0-6 0v1z" />
               </svg>
             </div>
@@ -883,7 +883,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" />
+                  <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" /> onclick="umami.track('view-menu'); fbq('trackCustom', 'ViewMenu');"
                 </svg>
               </div>
               <div>
@@ -896,7 +896,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             </svg>
           </a>
 
-          <a class="link-card" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener noreferrer"
+          <a class="link-card" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener noreferrer" onclick="umami.track('leave-review'); fbq('trackCustom', 'LeaveReview');"
             data-track="review_open">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
@@ -918,7 +918,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             data-track="website_open">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24"> onclick="umami.track('visit-website'); fbq('trackCustom', 'VisitWebsite');"
                   <path
                     d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z" />
                 </svg>
@@ -1038,7 +1038,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z" />
-        </svg>
+        </svg> onclick="umami.track('call'); fbq('trackCustom', 'Call');"
         Call
       </a>
 
@@ -1054,7 +1054,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M18 16a3 3 0 0 0-2.4 1.2l-6.2-3.1c.1-.3.1-.7 0-1l6.2-3.1A3 3 0 1 0 14 7c0 .2 0 .4.1.6L7.9 10.7a3 3 0 1 0 0 2.6l6.2 3.1c-.1.2-.1.4-.1.6a3 3 0 1 0 3-3z" />
-        </svg>
+        </svg> onclick="umami.track('share'); fbq('trackCustom', 'Share');"
         Share
       </button>
     </div>
