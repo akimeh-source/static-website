@@ -6,16 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#2B1B14" />
 
-      <!-- Meta Pixel Code -->
-      <script>
-              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '1612471676399433');
-              fbq('track', 'PageView');
-            </script>
-      <noscript>
-              <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1" />
-            </noscript>
-      <!-- End Meta Pixel Code -->
+
 
   <title>The Urban Chocolatier | Premium Desserts in Wembley</title>
   <meta name="description"
@@ -730,6 +721,7 @@
     }
   </style>
 
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLHM2P3C7F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -739,23 +731,38 @@
   </script>
 
   <script defer src="https://cloud.umami.is/script.js" data-website-id="bd86632a-3799-40d4-988d-02c0fde2ea1a"></script>
+
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1612471676399433');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1612471676399433');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script>
+    // Standard tracking helper
+    function trackEvent(name, label) {
+      // Umami
+      if (window.umami) umami.track(name);
+      // Meta Pixel
+      if (window.fbq) fbq('trackCustom', label || name);
+      // Google Analytics
+      if (window.gtag) gtag('event', name.replace(/-/g, '_'));
+    }
+  </script>
 </head>
 
 <body>
@@ -791,11 +798,11 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
 
       <div class="body">
         <a class="cta-primary" href="https://order.storekit.com/the-urban-chocolatier-wembley/menu" target="_blank"
-          rel="noopener noreferrer" data-track="directions="order_now_open" aria-label="Order now"> 
+          rel="noopener noreferrer" onclick="trackEvent('order-now', 'OrderNow')" aria-label="Order now">
           <div class="cta-left">
             <div class="cta-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
-                <path onclick="umami.track('order-now'); fbq('trackCustom', 'OrderNow');"
+                <path
                   d="M7 7V6a5 5 0 0 1 10 0v1h4l-1.2 14.2A2 2 0 0 1 17.8 23H6.2a2 2 0 0 1-2-1.8L3 7h4zm2 0h6V6a3 3 0 0 0-6 0v1z" />
               </svg>
             </div>
@@ -812,7 +819,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
         <div class="delivery-options">
           <a class="btn-delivery"
             href="https://www.ubereats.com/gb/store/the-urban-chocolatier-wembley/6K7VgxdzTrqyNcL5dfQdlw"
-            target="_blank" rel="noopener noreferrer" aria-label="Order on Uber Eats">
+            target="_blank" rel="noopener noreferrer" onclick="trackEvent('order-uber-eats', 'OrderUberEats')" aria-label="Order on Uber Eats">
             <svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#06C167">
               <path
                 d="M0 2.75V7.84C0 9.76 1.34 11.03 3.08 11.03C3.93 11.03 4.69 10.7 5.23 10.13V10.89H6.44V2.75H5.22V7.77C5.22 9.06 4.35 9.93 3.22 9.93C2.08 9.93 1.22 9.08 1.22 7.77V2.75H0M7.35 2.75V10.89H8.5V10.14A2.96 2.96 0 0 0 10.63 11.03A3.09 3.09 0 0 0 13.74 7.93A3.09 3.09 0 0 0 10.63 4.83C9.8 4.83 9.06 5.17 8.5 5.71V2.75H7.35M17.26 4.84C15.5 4.84 14.21 6.25 14.21 7.92C14.21 9.69 15.58 11 17.36 11C18.44 11 19.33 10.54 19.92 9.75L19.07 9.12C18.63 9.71 18.05 10 17.36 10C16.36 10 15.56 9.27 15.4 8.31H20.22V7.92C20.22 6.16 18.97 4.84 17.26 4.84M23.45 4.91C22.8 4.91 22.33 5.21 22.04 5.69V4.96H20.87V10.89H22.05V7.5C22.05 6.6 22.61 6 23.37 6H23.86V4.91H23.45M17.23 5.86C18.11 5.86 18.84 6.47 19.04 7.38H15.42C15.63 6.47 16.36 5.86 17.23 5.86M10.55 5.88C11.66 5.88 12.58 6.78 12.58 7.93C12.58 9.07 11.66 10 10.55 10A2.04 2.04 0 0 1 8.5 7.93C8.5 6.78 9.42 5.88 10.55 5.88M0 12.96V21.1H5.72V19.71H1.55V17.69H5.61V16.34H1.55V14.35H5.72V12.96H0M14.56 13.38V15.09H13.4V16.45H14.56V19.65C14.56 20.46 15.13 21.1 16.16 21.1H17.8V19.74H16.66C16.31 19.74 16.09 19.58 16.09 19.26V16.45H17.8V15.09H16.09V13.38H14.56M9.32 14.94C7.53 14.94 6.12 16.34 6.12 18.1C6.12 19.85 7.53 21.25 9.32 21.25C10.04 21.25 10.71 21 11.24 20.56V21.1H12.76V15.09H11.24V15.63A2.96 2.96 0 0 0 9.32 14.94M21.04 14.94C19.45 14.94 18.34 15.59 18.34 16.86C18.34 17.73 18.95 18.3 20.27 18.58L21.72 18.92C22.29 19.03 22.44 19.18 22.44 19.42C22.44 19.79 22 20.03 21.31 20.03C20.44 20.03 19.94 19.83 19.74 19.17H18.21C18.43 20.42 19.36 21.25 21.26 21.25C23 21.25 24 20.42 24 19.26C24 18.44 23.42 17.83 22.19 17.57L20.9 17.3C20.15 17.16 19.91 17 19.91 16.74C19.91 16.38 20.27 16.16 20.94 16.16C21.66 16.16 22.19 16.36 22.34 17H23.86C23.78 15.77 22.87 14.94 21.04 14.94M9.45 16.26C10.46 16.26 11.27 17.07 11.27 18.1S10.46 19.93 9.45 19.93A1.82 1.82 0 0 1 7.62 18.1C7.62 17.07 8.45 16.26 9.45 16.26Z" />
@@ -820,7 +827,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             Uber Eats
           </a>
           <a class="btn-delivery" href="https://deliveroo.co.uk/menu/London/wembley/urban-chocolatier-wembley"
-            target="_blank" rel="noopener noreferrer" aria-label="Order on Deliveroo">
+            target="_blank" rel="noopener noreferrer" onclick="trackEvent('order-deliveroo', 'OrderDeliveroo')" aria-label="Order on Deliveroo">
             <svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#00CCBC">
               <path
                 d="M16.861 0l-1.127 10.584L13.81 1.66 7.777 2.926l1.924 8.922-8.695 1.822 1.535 7.127L17.832 24l3.498-7.744L22.994.636 16.861 0zM11.39 13.61a.755.755 0 01.322.066c.208.093.56.29.63.592.103.434.004.799-.312 1.084v.002c-.315.284-.732.258-1.174.113-.441-.145-.637-.672-.47-1.309" />
@@ -834,7 +841,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             <div>
               <div class="info-title">Visit us in Wembley</div>
               <div class="info-muted">
-                <a class="maps-link" onclick="umami.track('get-directions'); fbq('trackCustom', 'GetDirections');" href="#" target="_blank" rel="noopener noreferrer" data-track="directions_ope onclick='fbq("track", "InitiateCheckout");'n"
+                <a class="maps-link" onclick="trackEvent('get-directions', 'GetDirections')" href="#" target="_blank" rel="noopener noreferrer"
                   style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
                   393 High Rd, Wembley HA9 6AA
                 </a>
@@ -843,7 +850,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             <div>
               <div class="info-title">Call</div>
               <div class="info-muted">
-                <a href="tel:+442070181150" data-track="call_ta onclick='fbq("track", "InitiateCheckout");'p"
+                <a href="tel:+442070181150" onclick="trackEvent('call', 'Call')"
                   style="color:inherit;text-decoration:underline;text-underline-offset:3px;">
                   020 7018 1150
                 </a>
@@ -879,11 +886,11 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
 
         <nav class="links" aria-label="Quick links">
           <a class="link-card" href="https://drive.google.com/file/d/1cYUIPV2PICYYkEvBJx7aYm1aqC_Q8vsA/view?usp=sharing"
-            target="_blank" rel="noopener noreferrer" data-track="menu_open">
+            target="_blank" rel="noopener noreferrer" onclick="trackEvent('view-menu', 'ViewMenu')">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" /> onclick="umami.track('view-menu'); fbq('trackCustom', 'ViewMenu');"
+                  <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" />
                 </svg>
               </div>
               <div>
@@ -896,8 +903,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             </svg>
           </a>
 
-          <a class="link-card" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener noreferrer" onclick="umami.track('leave-review'); fbq('trackCustom', 'LeaveReview');"
-            data-track="review_open">
+          <a class="link-card" href="https://g.page/r/CVNEi1Ji7vg6EB0/review" target="_blank" rel="noopener noreferrer" onclick="trackEvent('leave-review', 'LeaveReview')">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -915,10 +921,10 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
           </a>
 
           <a class="link-card" href="https://urbanchocolatier.com/" target="_blank" rel="noopener noreferrer"
-            data-track="website_open">
+            onclick="trackEvent('visit-website', 'VisitWebsite')">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"> onclick="umami.track('visit-website'); fbq('trackCustom', 'VisitWebsite');"
+                <svg viewBox="0 0 24 24">
                   <path
                     d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z" />
                 </svg>
@@ -933,7 +939,7 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
             </svg>
           </a>
 
-          <a class="link-card maps-link" href="#" target="_blank" rel="noopener noreferrer" data-track="maps_open">
+          <a class="link-card maps-link" href="#" target="_blank" rel="noopener noreferrer" onclick="trackEvent('get-directions', 'GetDirections')">
             <div class="lc-left">
               <div class="lc-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -1034,15 +1040,15 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
 
   <div class="sticky" aria-label="Quick actions">
     <div class="sticky-inner">
-      <a class="sbtn" href="tel:+442070181150" aria-label="Call">
+      <a class="sbtn" href="tel:+442070181150" aria-label="Call" onclick="trackEvent('call', 'Call')">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z" />
-        </svg> onclick="umami.track('call'); fbq('trackCustom', 'Call');"
+        </svg>
         Call
       </a>
 
-      <a class="sbtn maps-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Directions">
+      <a class="sbtn maps-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Directions" onclick="trackEvent('get-directions', 'GetDirections')">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z" />
@@ -1050,11 +1056,11 @@ src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1"
         Directions
       </a>
 
-      <button class="sbtn" id="shareBtn" type="button" aria-label="Share">
+      <button class="sbtn" id="shareBtn" type="button" aria-label="Share" onclick="trackEvent('share', 'Share')">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M18 16a3 3 0 0 0-2.4 1.2l-6.2-3.1c.1-.3.1-.7 0-1l6.2-3.1A3 3 0 1 0 14 7c0 .2 0 .4.1.6L7.9 10.7a3 3 0 1 0 0 2.6l6.2 3.1c-.1.2-.1.4-.1.6a3 3 0 1 0 3-3z" />
-        </svg> onclick="umami.track('share'); fbq('trackCustom', 'Share');"
+        </svg>
         Share
       </button>
     </div>
