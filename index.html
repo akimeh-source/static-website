@@ -883,8 +883,276 @@
       width: 22px;
       height: 22px;
     }
+
+    /* Voucher System */
+    .voucher-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      padding: 20px;
+    }
+
+    .voucher-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .pass-card {
+      width: 100%;
+      max-width: 360px;
+      background: linear-gradient(135deg, #232323 0%, #2C2C2E 100%);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      transform: translateY(40px) scale(0.95);
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .pass-card::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg,
+          transparent 40%,
+          rgba(255, 255, 255, 0.05) 45%,
+          rgba(212, 175, 55, 0.1) 50%,
+          rgba(255, 255, 255, 0.05) 55%,
+          transparent 60%);
+      animation: holo 6s infinite linear;
+      pointer-events: none;
+    }
+
+    @keyframes holo {
+      0% {
+        transform: rotate(0deg) translateY(0);
+      }
+
+      100% {
+        transform: rotate(360deg) translateY(0);
+      }
+    }
+
+    .voucher-modal.open .pass-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .pass-header {
+      background: linear-gradient(90deg, #D4AF37 0%, #F2C94C 100%);
+      padding: 24px;
+      color: #000;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pass-logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .pass-title {
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pass-body {
+      padding: 30px 24px;
+      text-align: center;
+    }
+
+    .discount-big {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(to bottom, #fff 0%, #aaa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .discount-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(74, 222, 128, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      border-radius: 12px;
+      color: #4ade80;
+      font-weight: 700;
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse-status 1.5s infinite;
+      box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    }
+
+    .pass-footer {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 16px;
+      font-size: 11px;
+      color: var(--text-dim);
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 2;
+    }
+
+    .session-ref {
+      font-family: monospace;
+      font-size: 13px;
+      opacity: 0.6;
+      margin-bottom: 2px;
+      letter-spacing: 1px;
+    }
+
+    .redeem-warn {
+      font-size: 11px;
+      color: #F87171;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.9;
+    }
+
+    .redeem-btn {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #F87171;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .pass-card.redeemed {
+      filter: grayscale(1);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .pass-card.redeemed .discount-big {
+      font-size: 32px;
+      color: #999;
+      -webkit-text-fill-color: #999;
+    }
+
+    .pass-card.redeemed .live-indicator {
+      display: none;
+    }
+
+    .perk-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(20, 10, 10, 1) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+      text-decoration: none;
+      color: var(--text);
+      overflow: hidden;
+      margin-bottom: 16px;
+      animation: pulse-gold 3s infinite;
+    }
+
+    @keyframes pulse-gold {
+      0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.1);
+        border-color: rgba(212, 175, 55, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.05);
+        border-color: rgba(212, 175, 55, 0.7);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.1);
+        border-color: rgba(212, 175, 55, 0.4);
+      }
+    }
+
+    .perk-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #D4AF37;
+      color: #000;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
   </style>
 
+
+  <div class="voucher-modal" id="voucherModal" onclick="closeVoucher(event)">
+    <div class="pass-card" onclick="event.stopPropagation()">
+      <div class="pass-header">
+        <div class="pass-logo">The Urban Chocolatier</div>
+        <div class="pass-title">Exclusive In-Store Pass</div>
+      </div>
+      <div class="pass-body">
+        <div class="discount-big" id="voucherTitle">15% OFF</div>
+        <div class="discount-sub" id="voucherSub">Show this screen at the counter</div>
+
+        <div class="live-indicator" id="voucherLive">
+          <div class="live-dot"></div>
+          <span id="voucherClock">12:42:05</span>
+        </div>
+
+        <div id="redeemSection">
+          <div class="redeem-warn">Staff Use Only - Do not tap</div>
+          <button class="redeem-btn" onclick="redeemVoucher(event)">Tap to Redeem</button>
+        </div>
+      </div>
+      <div class="pass-footer">
+        <div class="session-ref" id="voucherRef">REF: ...</div>
+        Valid for one transaction only.
+      </div>
+    </div>
+  </div>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLHM2P3C7F"></script>
   <script>
@@ -1063,6 +1331,25 @@
               </div>
             </div>
             <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </a>
+
+          <a class="perk-card" href="#" onclick="openVoucher(event)" role="button">
+            <div class="perk-badge">Exclusive</div>
+            <div class="lc-left">
+              <div class="lc-icon" style="background: #D4AF37; border-color: #F2C94C; color: #000;">
+                <svg viewBox="0 0 24 24" style="fill: #000;">
+                  <path
+                    d="M20 12h-2V6h2v6zm0 4h-2v2h2v-2zM4 12h2V6H4v6zm0 4h2v2H4v-2zM9 4h6v2H9V4zm0 2H7v12h2V6zm6 0h2v12h-2V6z" />
+                </svg>
+              </div>
+              <div>
+                <div class="lc-title" style="color: #D4AF37; font-size: 16px;">Unlock In-Store Perk</div>
+                <div class="lc-sub" style="color: rgba(255,255,255,0.8);">Tap to reveal 15% off voucher</div>
+              </div>
+            </div>
+            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true" style="fill: #D4AF37;">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </a>
@@ -1371,6 +1658,107 @@
         navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW failed', err));
       }
     }
+
+    // Voucher Logic
+    function initVoucher() {
+      const isUnlocked = localStorage.getItem('uc_voucher_unlocked');
+      const isRedeemed = localStorage.getItem('uc_voucher_redeemed');
+
+      // Generate Session ID if new
+      let refId = localStorage.getItem('uc_voucher_ref');
+      if (!refId) {
+        refId = 'REF-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+        localStorage.setItem('uc_voucher_ref', refId);
+      }
+      document.getElementById('voucherRef').textContent = refId;
+
+      if (isRedeemed) {
+        updateVoucherUI('REDEEMED');
+      } else if (isUnlocked) {
+        updateLinkText('View Your Pass');
+      }
+    }
+
+    function openVoucher(e) {
+      if (e) e.preventDefault();
+
+      // Auto-unlock on first view
+      if (!localStorage.getItem('uc_voucher_unlocked')) {
+        localStorage.setItem('uc_voucher_unlocked', 'true');
+        updateLinkText('View Your Pass');
+        trackEvent('unlock-voucher', 'UnlockVoucher');
+      }
+
+      const modal = document.getElementById('voucherModal');
+      modal.classList.add('open');
+      startClock();
+      document.body.style.overflow = 'hidden';
+
+      // Check if already redeemed (ui sync)
+      if (localStorage.getItem('uc_voucher_redeemed')) {
+        updateVoucherUI('REDEEMED');
+      }
+    }
+
+    function redeemVoucher(e) {
+      e.stopPropagation();
+      if (confirm('STAFF CHECK:\n\nAre you sure you want to redeem this voucher?\nThis action is permanent and creates a timestamped log.')) {
+        localStorage.setItem('uc_voucher_redeemed', 'true');
+        trackEvent('redeem-voucher', 'RedeemVoucher');
+        updateVoucherUI('REDEEMED');
+      }
+    }
+
+    function updateVoucherUI(state) {
+      const card = document.querySelector('.pass-card');
+      const title = document.getElementById('voucherTitle');
+      const sub = document.getElementById('voucherSub');
+      const redeemSec = document.getElementById('redeemSection'); // Wrapper
+      const live = document.getElementById('voucherLive');
+
+      if (state === 'REDEEMED') {
+        card.classList.add('redeemed');
+        title.textContent = 'REDEEMED';
+        sub.textContent = 'This voucher has been used';
+        if (redeemSec) redeemSec.style.display = 'none';
+        if (live) live.style.display = 'none';
+        updateLinkText('Voucher Redeemed');
+      }
+    }
+
+    function updateLinkText(text) {
+      const title = document.querySelector('.lc-title[style*="D4AF37"]'); // Gold title
+      const sub = document.querySelector('.lc-sub'); // We might want to target the specific sub if possible
+      if (title) title.textContent = text;
+      // Ideally we'd add a specific ID to the link card for cleaner selection, but this works for now
+    }
+
+    function closeVoucher(e) {
+      if (e) e.stopPropagation();
+      const modal = document.getElementById('voucherModal');
+      modal.classList.remove('open');
+      stopClock();
+      document.body.style.overflow = '';
+    }
+
+    let clockInterval;
+    function startClock() {
+      const el = document.getElementById('voucherClock');
+      if (!el) return;
+      const update = () => {
+        const now = new Date();
+        el.textContent = now.toLocaleTimeString('en-GB', { hour12: false });
+      };
+      update();
+      clockInterval = setInterval(update, 1000);
+    }
+
+    function stopClock() {
+      clearInterval(clockInterval);
+    }
+
+    // Init on load
+    initVoucher();
   </script>
 </body>
 
