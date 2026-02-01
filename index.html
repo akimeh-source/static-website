@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#2B1B14" />
 
+  <link rel="canonical" href="https://ucwembley.2--y.com/">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-512.png">
   <title>The Urban Chocolatier | Premium Desserts in Wembley</title>
@@ -17,23 +18,20 @@
     content="Experience luxury desserts at The Urban Chocolatier. Famous for our chocolate profiteroles and signature creations." />
   <meta property="og:type" content="website" />
   <meta property="og:image"
-    content="images/hero.jpg" />
+    content="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
   <meta property="og:url" content="https://ucwembley.2--y.com/" />
   <meta property="og:site_name" content="The Urban Chocolatier" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="canonical" href="https://ucwembley.2--y.com/">
   <link rel="icon"
-    href="images/favicon.jpg" />
+    href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261.jpeg?t=1708449747" />
 
   <link rel="preconnect" href="https://cdn0030.qrcodechimp.com" crossorigin>
   <link rel="preconnect" href="https://order.storekit.com">
   <link rel="preconnect" href="https://www.ubereats.com">
   <link rel="preconnect" href="https://deliveroo.co.uk">
-  <link rel="dns-prefetch" href="https://connect.facebook.net">
-  <link rel="dns-prefetch" href="https://cloud.umami.is">
   <link rel="preload" as="image"
-    href="images/hero.jpg" />
+    href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
 
   <!-- Use your exact Google Maps link everywhere -->
   <script>
@@ -45,7 +43,7 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "The Urban Chocolatier",
-    "image": "images/hero.jpg",
+    "image": "https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "393 High Rd",
@@ -1118,81 +1116,6 @@
       }
     }
 
-    /* Cookie Consent Banner */
-    .cookie-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(22, 12, 16, 0.98);
-      padding: 16px 20px;
-      border-top: 1px solid var(--stroke);
-      z-index: 9999;
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      transform: translateY(0);
-      transition: transform 0.3s ease;
-    }
-
-    .cookie-banner.hidden {
-      transform: translateY(100%);
-      pointer-events: none;
-    }
-
-    .cookie-banner p {
-      margin: 0;
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    .cookie-banner a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .cookie-btn {
-      padding: 10px 20px;
-      border-radius: var(--radius-pill);
-      font-weight: 700;
-      font-size: 12px;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.2s ease;
-    }
-
-    .cookie-btn:active {
-      transform: scale(0.95);
-    }
-
-    .cookie-btn-primary {
-      background: var(--accent);
-      color: #000;
-    }
-
-    .cookie-btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--stroke);
-    }
-
-    @media (max-width: 480px) {
-      .cookie-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-      }
-      .cookie-banner p {
-        font-size: 12px;
-      }
-    }
-
     .perk-badge {
       position: absolute;
       top: 10px;
@@ -1239,9 +1162,8 @@
   </div>
 
   <script>
-    // Cookie Consent and Tracking Management
+    // Cookie Consent & Tracking Management
     (function() {
-      // Check if user has already consented
       const hasConsented = localStorage.getItem('uc_cookie_consent') === 'accepted';
       
       // Stubs for tracking functions (used before consent)
@@ -1286,14 +1208,13 @@
       // Handle cookie consent
       window.acceptCookies = function() {
         localStorage.setItem('uc_cookie_consent', 'accepted');
-        document.getElementById('cookie-banner').classList.add('hidden');
+        document.getElementById('cookie-banner').style.display = 'none';
         loadTrackingScripts();
       };
       
       window.declineCookies = function() {
         localStorage.setItem('uc_cookie_consent', 'declined');
-        document.getElementById('cookie-banner').classList.add('hidden');
-        // Keep stubs in place (tracking disabled)
+        document.getElementById('cookie-banner').style.display = 'none';
       };
       
       // Auto-load if already consented
@@ -1304,11 +1225,8 @@
     
     // Standard tracking helper
     function trackEvent(name, label) {
-      // Umami
       if (window.umami && window.umami.track) umami.track(name);
-      // Meta Pixel
       if (window.fbq && window.fbq !== function(){}) fbq('trackCustom', label || name);
-      // Google Analytics
       if (window.gtag && window.gtag !== function(){}) gtag('event', name.replace(/-/g, '_'));
     }
   </script>
@@ -1319,14 +1237,14 @@
     <section class="card" aria-label="The Urban Chocolatier">
 
       <a class="hero js-lightbox"
-        href="images/hero.jpg"
+        href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg"
         aria-label="View hero image">
         <div id="statusBadge" class="status-badge">
           <div class="status-dot"></div>
           <span>Checking...</span>
         </div>
         <img
-          src="images/hero.jpg" onerror="this.src='https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg'"
+          src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg"
           alt="The Urban Chocolatier desserts" width="840" height="500" loading="eager" fetchpriority="high" />
         <div class="hero-content">
           <h1 class="brand">The Urban Chocolatier</h1>
@@ -1574,37 +1492,37 @@
           <h2>Our signature <span class="hint">Swipe</span></h2>
           <div class="sig-track" role="list">
             <a class="sig js-lightbox" role="listitem"
-              href="images/profiteroles.png"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="images/profiteroles.png" onerror="this.src='https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png'"
+                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png"
                   alt="Chocolate profiteroles" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Chocolate profiteroles</div>
             </a>
             <a class="sig js-lightbox" role="listitem"
-              href="images/signature.png"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="images/signature.png" onerror="this.src='https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png'"
+                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png"
                   alt="Signature creation" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Signature creation</div>
             </a>
             <a class="sig js-lightbox" role="listitem"
-              href="images/waffles.png"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="images/waffles.png" onerror="this.src='https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png'"
+                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png"
                   alt="Waffles & drizzle" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Waffles & drizzle</div>
             </a>
             <a class="sig js-lightbox" role="listitem"
-              href="images/chocolate.png"
+              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="images/chocolate.png" onerror="this.src='https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png'"
+                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png"
                   alt="Chocolate delight" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Chocolate delight</div>
@@ -1886,22 +1804,19 @@
   </script>
 
   <!-- Cookie Consent Banner -->
-  <div id="cookie-banner" class="cookie-banner" style="display: none;">
-    <p>We use cookies for analytics. <a href="https://urbanchocolatier.com/privacy" target="_blank">Learn more</a></p>
-    <div style="display: flex; gap: 8px;">
-      <button class="cookie-btn cookie-btn-secondary" onclick="declineCookies()">Decline</button>
-      <button class="cookie-btn cookie-btn-primary" onclick="acceptCookies()">Accept</button>
+  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:rgba(22,12,16,0.98);padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);z-index:9999;display:none;backdrop-filter:blur(10px);">
+    <div style="max-width:420px;margin:0 auto;display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+      <p style="margin:0;font-size:13px;color:rgba(250,247,245,0.7);">We use cookies for analytics</p>
+      <div style="display:flex;gap:8px;">
+        <button onclick="declineCookies()" style="padding:10px 20px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:#FDF8F5;border-radius:999px;font-weight:700;font-size:12px;cursor:pointer;">Decline</button>
+        <button onclick="acceptCookies()" style="padding:10px 20px;background:#D4AF37;border:none;color:#1a1200;border-radius:999px;font-weight:800;font-size:12px;cursor:pointer;">Accept</button>
+      </div>
     </div>
   </div>
-  
   <script>
-    // Show cookie banner if not yet decided
-    (function() {
-      const consent = localStorage.getItem('uc_cookie_consent');
-      if (!consent) {
-        document.getElementById('cookie-banner').style.display = 'flex';
-      }
-    })();
+    if (!localStorage.getItem('uc_cookie_consent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
   </script>
 </body>
 
