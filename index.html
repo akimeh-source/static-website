@@ -11,11 +11,11 @@
   <link rel="apple-touch-icon" href="icon-512.png">
   <title>The Urban Chocolatier | Premium Desserts in Wembley</title>
   <meta name="description"
-    content="Experience luxury desserts at The Urban Chocolatier in Wembley. Famous for our chocolate profiteroles, waffles, and signature creations. Open late, delivery available." />
+    content="Visit The Urban Chocolatier Wembley for premium desserts, open late most nights. Walk-ins welcome, quick directions, and an in-store perk for first-time guests." />
 
   <meta property="og:title" content="The Urban Chocolatier | Premium Desserts in Wembley" />
   <meta property="og:description"
-    content="Experience luxury desserts at The Urban Chocolatier. Famous for our chocolate profiteroles and signature creations." />
+    content="Plan your visit to The Urban Chocolatier Wembley. Open late, walk-ins welcome, and in-store perk available." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://ucwembley.2--y.com/images/hero.jpg" />
   <meta property="og:url" content="https://ucwembley.2--y.com/" />
@@ -26,7 +26,6 @@
 
   <link rel="preconnect" href="https://order.storekit.com">
   <link rel="preconnect" href="https://www.ubereats.com">
-  <link rel="preconnect" href="https://deliveroo.co.uk">
   <link rel="preload" as="image" href="images/hero.jpg" />
 
   <!-- Use your exact Google Maps link everywhere -->
@@ -278,9 +277,9 @@
 
     .subline {
       margin: 8px 0 0;
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--text-muted);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .chips {
@@ -299,8 +298,8 @@
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--stroke);
       color: #fff;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 11.5px;
+      font-weight: 700;
       text-decoration: none;
       transition: all 0.3s ease;
     }
@@ -354,11 +353,11 @@
       gap: 10px;
       padding: 20px 16px;
       border-radius: 24px;
-      background: linear-gradient(135deg, var(--accent) 0%, #A24BE0 55%, #D27BFF 120%);
+      background: linear-gradient(135deg, #d4af37 0%, #f1d06b 45%, #ffd976 100%);
       color: #fff;
       text-decoration: none;
       border: 1px solid rgba(255, 255, 255, .18);
-      box-shadow: 0 18px 40px rgba(126, 58, 166, .22);
+      box-shadow: 0 18px 40px rgba(212, 175, 55, .28);
       -webkit-tap-highlight-color: transparent;
       transition: transform 0.3s ease;
     }
@@ -378,8 +377,8 @@
       width: 38px;
       height: 38px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, .16);
-      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(0, 0, 0, .22);
+      border: 1px solid rgba(0, 0, 0, .25);
       display: grid;
       place-items: center;
       flex: 0 0 auto;
@@ -399,13 +398,48 @@
     .cta-sub {
       margin-top: 2px;
       font-size: 12px;
-      color: rgba(255, 255, 255, .88);
+      color: rgba(38, 24, 3, .88);
     }
 
     .cta-arrow {
       width: 18px;
       height: 18px;
       flex-shrink: 0;
+    }
+
+    .mini-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: -2px;
+    }
+
+    .mini-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 16px;
+      text-decoration: none;
+      border: 1px solid var(--stroke);
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 700;
+      box-shadow: var(--shadow-2);
+    }
+
+    .mini-action svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .mini-action.perk {
+      border-color: rgba(212, 175, 55, 0.45);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(14, 11, 5, 0.98) 100%);
+      color: #f1d06b;
     }
 
     .info {
@@ -494,6 +528,45 @@
       border-color: rgba(126, 58, 166, .18);
     }
 
+    .content-collapse {
+      background: var(--bg-card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-1);
+      padding: 12px;
+      box-shadow: var(--shadow-2);
+    }
+
+    .content-collapse summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 13.5px;
+      color: var(--accent-2);
+    }
+
+    .content-collapse summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .collapse-chevron {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent-2);
+      transition: transform 0.2s ease;
+    }
+
+    .content-collapse[open] .collapse-chevron {
+      transform: rotate(90deg);
+    }
+
+    .content-collapse-body {
+      margin-top: 10px;
+    }
+
     .links {
       display: flex;
       flex-direction: column;
@@ -564,13 +637,6 @@
       padding: 0;
     }
 
-    .reviews h2 {
-      margin: 0 0 12px 0;
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 700;
-    }
-
     .review {
       display: flex;
       gap: 10px;
@@ -624,16 +690,6 @@
 
     .signature {
       margin-top: 12px;
-    }
-
-    .signature h2 {
-      margin: 0 0 16px 0;
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
 
     .sig-track {
@@ -755,10 +811,28 @@
       z-index: 30;
     }
 
+    body.cookie-open .sticky {
+      bottom: calc(96px + var(--safe-bottom));
+    }
+
+    body.cookie-open .wrap {
+      padding-bottom: calc(var(--sticky-h) + 128px);
+    }
+
+    @media (max-height: 860px) {
+      body.cookie-open .sticky {
+        display: none;
+      }
+
+      body.cookie-open .wrap {
+        padding-bottom: calc(24px + var(--safe-bottom));
+      }
+    }
+
     .sticky-inner {
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1.25fr 1fr;
       gap: 10px;
       padding: 10px;
       border-radius: 22px;
@@ -794,6 +868,41 @@
       width: 18px;
       height: 18px;
       fill: currentColor;
+    }
+
+    .sbtn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #f1d06b 100%);
+      color: #2a1b03;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 8px 16px rgba(212, 175, 55, 0.22);
+      font-weight: 800;
+    }
+
+    .sbtn-primary:active {
+      background: linear-gradient(135deg, #c9a530 0%, #e7c75f 100%);
+      color: #211400;
+    }
+
+    .visit-proof {
+      margin-top: 4px;
+      background: linear-gradient(140deg, rgba(22, 30, 34, 0.9) 0%, rgba(12, 18, 22, 0.95) 100%);
+      border: 1px solid rgba(38, 187, 239, 0.28);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: var(--shadow-2);
+      display: grid;
+      gap: 6px;
+    }
+
+    .visit-proof strong {
+      color: #9fe7ff;
+      font-size: 13.5px;
+      font-weight: 800;
+    }
+
+    .visit-proof span {
+      color: var(--text-muted);
+      font-size: 12.5px;
     }
 
     /* Lightbox */
@@ -853,7 +962,7 @@
     /* Delivery Buttons */
     .delivery-options {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 10px;
     }
 
@@ -892,7 +1001,7 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       z-index: 2000;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       opacity: 0;
@@ -902,6 +1011,7 @@
     }
 
     .voucher-modal.open {
+      display: flex;
       opacity: 1;
       pointer-events: auto;
     }
@@ -1077,53 +1187,6 @@
       display: none;
     }
 
-    .perk-card {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 16px 18px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(20, 10, 10, 1) 100%);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
-      text-decoration: none;
-      color: var(--text);
-      overflow: hidden;
-      margin-bottom: 16px;
-      animation: pulse-gold 3s infinite;
-    }
-
-    @keyframes pulse-gold {
-      0% {
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.1);
-        border-color: rgba(212, 175, 55, 0.4);
-      }
-
-      50% {
-        box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.05);
-        border-color: rgba(212, 175, 55, 0.7);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.1);
-        border-color: rgba(212, 175, 55, 0.4);
-      }
-    }
-
-    .perk-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #D4AF37;
-      color: #000;
-      font-size: 9px;
-      font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 6px;
-      text-transform: uppercase;
-    }
   </style>
 
 
@@ -1135,7 +1198,7 @@
       </div>
       <div class="pass-body">
         <div class="discount-big" id="voucherTitle">15% OFF</div>
-        <div class="discount-sub" id="voucherSub">Show this screen at the counter</div>
+        <div class="discount-sub" id="voucherSub">Show this screen at the counter (min spend £15)</div>
 
         <div class="live-indicator" id="voucherLive">
           <div class="live-dot"></div>
@@ -1149,7 +1212,7 @@
       </div>
       <div class="pass-footer">
         <div class="session-ref" id="voucherRef">REF: ...</div>
-        <div style="margin-bottom: 8px;">Valid for one transaction only.</div>
+        <div style="margin-bottom: 8px;">Minimum spend £15. Valid for one transaction only.</div>
         <a href="https://forms.leat.com/forms/d1867642-d1e0-404b-87e2-a0bd6c8059db?account-uuid=4bff9ae3-f57c-4d30-9ab0-a35daf4b5631"
           target="_blank" style="color: #D4AF37; text-decoration: none; border-bottom: 1px dotted #D4AF37;">Not a
           member? Register for Points</a>
@@ -1220,12 +1283,14 @@
       window.acceptCookies = function() {
         localStorage.setItem('uc_cookie_consent', 'accepted');
         document.getElementById('cookie-banner').style.display = 'none';
+        document.body.classList.remove('cookie-open');
         loadTrackingScripts();
       };
       
       window.declineCookies = function() {
         localStorage.setItem('uc_cookie_consent', 'declined');
         document.getElementById('cookie-banner').style.display = 'none';
+        document.body.classList.remove('cookie-open');
       };
       
       // Auto-load if already consented
@@ -1237,17 +1302,13 @@
     // Enhanced tracking helper with conversion support
     function trackEvent(name, label, options = {}) {
       const eventMap = {
-        'order-now': { fbqEvent: 'InitiateCheckout', fbqMethod: 'track', gaLabel: 'order_now' },
         'order-uber-eats': { fbqEvent: 'order_ubereats', fbqMethod: 'trackCustom', gaLabel: 'order_ubereats' },
-        'order-deliveroo': { fbqEvent: 'order_deliveroo', fbqMethod: 'trackCustom', gaLabel: 'order_deliveroo' },
         'unlock-voucher': { fbqEvent: 'ViewContent', fbqMethod: 'track', gaLabel: 'unlock_voucher' },
         'redeem-voucher': { fbqEvent: 'Purchase', fbqMethod: 'track', gaLabel: 'redeem_voucher' },
         'leave-review': { fbqEvent: 'leave_review', fbqMethod: 'trackCustom', gaLabel: 'leave_review' },
-        'visit-website': { fbqEvent: 'visit_website', fbqMethod: 'trackCustom', gaLabel: 'visit_website' },
         'get-directions': { fbqEvent: 'FindLocation', fbqMethod: 'track', gaLabel: 'get_directions' },
         'call': { fbqEvent: 'Contact', fbqMethod: 'track', gaLabel: 'call_restaurant' },
-        'view-menu': { fbqEvent: 'ViewContent', fbqMethod: 'track', gaLabel: 'view_menu' },
-        'share': { fbqEvent: 'share_page', fbqMethod: 'trackCustom', gaLabel: 'share_page' }
+        'view-menu': { fbqEvent: 'ViewContent', fbqMethod: 'track', gaLabel: 'view_menu' }
       };
 
       const eventConfig = eventMap[name] || { fbqEvent: label || name, fbqMethod: 'trackCustom', gaLabel: label || name };
@@ -1281,9 +1342,7 @@
   <main class="wrap">
     <section class="card" aria-label="The Urban Chocolatier">
 
-      <a class="hero js-lightbox"
-        href="images/hero.jpg"
-        aria-label="View hero image">
+      <div class="hero" aria-label="Hero image">
         <div id="statusBadge" class="status-badge">
           <div class="status-dot"></div>
           <span>Checking...</span>
@@ -1292,9 +1351,7 @@
           src="images/hero.jpg"
           alt="The Urban Chocolatier desserts" width="840" height="500" loading="eager" fetchpriority="high" />
         <div class="hero-content">
-          <h1 class="brand">The Urban Chocolatier</h1>
-          <p class="subline">393 High Rd, Wembley HA9 6AA</p>
-
+          <h1 class="brand">The Urban Chocolatier Wembley</h1>
           <div class="chips" aria-label="Key details">
             <span class="chip" aria-label="Rating">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1302,50 +1359,47 @@
               </svg>
               4.6 (1,997)
             </span>
+            <span class="chip">Open till 2:15am Fri–Sat</span>
+            <span class="chip">In-store perk available</span>
+            <span class="chip">393 High Rd, HA9 6AA</span>
           </div>
         </div>
-      </a>
+      </div>
 
       <div class="body">
-        <a class="cta-primary" href="https://order.storekit.com/the-urban-chocolatier-wembley/menu" target="_blank"
-          rel="noopener noreferrer" onclick="trackEvent('order-now', 'OrderNow')" aria-label="Order now">
+        <a class="cta-primary maps-link" href="#" target="_blank"
+          rel="noopener noreferrer" onclick="trackEvent('get-directions', 'GetDirections')" aria-label="Get directions">
           <div class="cta-left">
             <div class="cta-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path
-                  d="M7 7V6a5 5 0 0 1 10 0v1h4l-1.2 14.2A2 2 0 0 1 17.8 23H6.2a2 2 0 0 1-2-1.8L3 7h4zm2 0h6V6a3 3 0 0 0-6 0v1z" />
+                  d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z" />
               </svg>
             </div>
             <div>
-              <div class="cta-title">Order now</div>
-              <div class="cta-sub">Delivery or collection • Open late</div>
+              <div class="cta-title">Get directions now</div>
+              <div class="cta-sub">Fastest way to arrive for dine-in</div>
             </div>
           </div>
           <svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="white" d="M9 18l6-6-6-6" />
+            <path fill="#2a1b03" d="M9 18l6-6-6-6" />
           </svg>
         </a>
 
-        <div class="delivery-options">
-          <a class="btn-delivery"
-            href="https://www.ubereats.com/gb/store/the-urban-chocolatier-wembley/6K7VgxdzTrqyNcL5dfQdlw"
-            target="_blank" rel="noopener noreferrer" onclick="trackEvent('order-uber-eats', 'OrderUberEats')"
-            aria-label="Order on Uber Eats">
-            <svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#06C167">
+        <div class="mini-actions">
+          <a class="mini-action" href="tel:+442070181150" onclick="trackEvent('call', 'Call')">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
-                d="M0 2.75V7.84C0 9.76 1.34 11.03 3.08 11.03C3.93 11.03 4.69 10.7 5.23 10.13V10.89H6.44V2.75H5.22V7.77C5.22 9.06 4.35 9.93 3.22 9.93C2.08 9.93 1.22 9.08 1.22 7.77V2.75H0M7.35 2.75V10.89H8.5V10.14A2.96 2.96 0 0 0 10.63 11.03A3.09 3.09 0 0 0 13.74 7.93A3.09 3.09 0 0 0 10.63 4.83C9.8 4.83 9.06 5.17 8.5 5.71V2.75H7.35M17.26 4.84C15.5 4.84 14.21 6.25 14.21 7.92C14.21 9.69 15.58 11 17.36 11C18.44 11 19.33 10.54 19.92 9.75L19.07 9.12C18.63 9.71 18.05 10 17.36 10C16.36 10 15.56 9.27 15.4 8.31H20.22V7.92C20.22 6.16 18.97 4.84 17.26 4.84M23.45 4.91C22.8 4.91 22.33 5.21 22.04 5.69V4.96H20.87V10.89H22.05V7.5C22.05 6.6 22.61 6 23.37 6H23.86V4.91H23.45M17.23 5.86C18.11 5.86 18.84 6.47 19.04 7.38H15.42C15.63 6.47 16.36 5.86 17.23 5.86M10.55 5.88C11.66 5.88 12.58 6.78 12.58 7.93C12.58 9.07 11.66 10 10.55 10A2.04 2.04 0 0 1 8.5 7.93C8.5 6.78 9.42 5.88 10.55 5.88M0 12.96V21.1H5.72V19.71H1.55V17.69H5.61V16.34H1.55V14.35H5.72V12.96H0M14.56 13.38V15.09H13.4V16.45H14.56V19.65C14.56 20.46 15.13 21.1 16.16 21.1H17.8V19.74H16.66C16.31 19.74 16.09 19.58 16.09 19.26V16.45H17.8V15.09H16.09V13.38H14.56M9.32 14.94C7.53 14.94 6.12 16.34 6.12 18.1C6.12 19.85 7.53 21.25 9.32 21.25C10.04 21.25 10.71 21 11.24 20.56V21.1H12.76V15.09H11.24V15.63A2.96 2.96 0 0 0 9.32 14.94M21.04 14.94C19.45 14.94 18.34 15.59 18.34 16.86C18.34 17.73 18.95 18.3 20.27 18.58L21.72 18.92C22.29 19.03 22.44 19.18 22.44 19.42C22.44 19.79 22 20.03 21.31 20.03C20.44 20.03 19.94 19.83 19.74 19.17H18.21C18.43 20.42 19.36 21.25 21.26 21.25C23 21.25 24 20.42 24 19.26C24 18.44 23.42 17.83 22.19 17.57L20.9 17.3C20.15 17.16 19.91 17 19.91 16.74C19.91 16.38 20.27 16.16 20.94 16.16C21.66 16.16 22.19 16.36 22.34 17H23.86C23.78 15.77 22.87 14.94 21.04 14.94M9.45 16.26C10.46 16.26 11.27 17.07 11.27 18.1S10.46 19.93 9.45 19.93A1.82 1.82 0 0 1 7.62 18.1C7.62 17.07 8.45 16.26 9.45 16.26Z" />
+                d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.9.1.4 0 .8-.3 1.1l-2.1 2.8z" />
             </svg>
-            Uber Eats
+            Call before you come
           </a>
-          <a class="btn-delivery" href="https://deliveroo.co.uk/menu/London/wembley/urban-chocolatier-wembley"
-            target="_blank" rel="noopener noreferrer" onclick="trackEvent('order-deliveroo', 'OrderDeliveroo')"
-            aria-label="Order on Deliveroo">
-            <svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#00CCBC">
-              <path
-                d="M16.861 0l-1.127 10.584L13.81 1.66 7.777 2.926l1.924 8.922-8.695 1.822 1.535 7.127L17.832 24l3.498-7.744L22.994.636 16.861 0zM11.39 13.61a.755.755 0 01.322.066c.208.093.56.29.63.592.103.434.004.799-.312 1.084v.002c-.315.284-.732.258-1.174.113-.441-.145-.637-.672-.47-1.309" />
+          <button class="mini-action perk" type="button" onclick="openVoucher(event); trackEvent('unlock-voucher', 'UnlockVoucher')">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 12h-2V6h2v6zm0 4h-2v2h2v-2zM4 12h2V6H4v6zm0 4h2v2H4v-2zM9 4h6v2H9V4zm0 2H7v12h2V6zm6 0h2v12h-2V6z" />
             </svg>
-            Deliveroo
-          </a>
+            <span id="perkMiniLabel">Unlock 15% in-store perk</span>
+          </button>
         </div>
 
         <div class="info" aria-label="Location and opening hours">
@@ -1396,26 +1450,33 @@
           </details>
         </div>
 
-        <nav class="links" aria-label="Quick links">
-          <a class="perk-card" href="#" onclick="openVoucher(event)" role="button">
-            <div class="perk-badge">Exclusive</div>
-            <div class="lc-left">
-              <div class="lc-icon" style="background: #D4AF37; border-color: #F2C94C; color: #000;">
-                <svg viewBox="0 0 24 24" style="fill: #000;">
-                  <path
-                    d="M20 12h-2V6h2v6zm0 4h-2v2h2v-2zM4 12h2V6H4v6zm0 4h2v2H4v-2zM9 4h6v2H9V4zm0 2H7v12h2V6zm6 0h2v12h-2V6z" />
-                </svg>
-              </div>
-              <div>
-                <div class="lc-title" style="color: #D4AF37; font-size: 16px;">Unlock In-Store Perk</div>
-                <div class="lc-sub" style="color: rgba(255,255,255,0.8);">Tap to reveal 15% off voucher</div>
-              </div>
-            </div>
-            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true" style="fill: #D4AF37;">
+        <details class="content-collapse">
+          <summary>
+            Prefer delivery instead?
+            <svg class="collapse-chevron" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 18l6-6-6-6" />
             </svg>
-          </a>
+          </summary>
+          <div class="content-collapse-body delivery-options">
+            <a class="btn-delivery"
+              href="https://www.ubereats.com/gb/store/the-urban-chocolatier-wembley/6K7VgxdzTrqyNcL5dfQdlw"
+              target="_blank" rel="noopener noreferrer" onclick="trackEvent('order-uber-eats', 'OrderUberEats')"
+              aria-label="Order on Uber Eats">
+              <svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#06C167">
+                <path
+                  d="M0 2.75V7.84C0 9.76 1.34 11.03 3.08 11.03C3.93 11.03 4.69 10.7 5.23 10.13V10.89H6.44V2.75H5.22V7.77C5.22 9.06 4.35 9.93 3.22 9.93C2.08 9.93 1.22 9.08 1.22 7.77V2.75H0M7.35 2.75V10.89H8.5V10.14A2.96 2.96 0 0 0 10.63 11.03A3.09 3.09 0 0 0 13.74 7.93A3.09 3.09 0 0 0 10.63 4.83C9.8 4.83 9.06 5.17 8.5 5.71V2.75H7.35M17.26 4.84C15.5 4.84 14.21 6.25 14.21 7.92C14.21 9.69 15.58 11 17.36 11C18.44 11 19.33 10.54 19.92 9.75L19.07 9.12C18.63 9.71 18.05 10 17.36 10C16.36 10 15.56 9.27 15.4 8.31H20.22V7.92C20.22 6.16 18.97 4.84 17.26 4.84M23.45 4.91C22.8 4.91 22.33 5.21 22.04 5.69V4.96H20.87V10.89H22.05V7.5C22.05 6.6 22.61 6 23.37 6H23.86V4.91H23.45M17.23 5.86C18.11 5.86 18.84 6.47 19.04 7.38H15.42C15.63 6.47 16.36 5.86 17.23 5.86M10.55 5.88C11.66 5.88 12.58 6.78 12.58 7.93C12.58 9.07 11.66 10 10.55 10A2.04 2.04 0 0 1 8.5 7.93C8.5 6.78 9.42 5.88 10.55 5.88M0 12.96V21.1H5.72V19.71H1.55V17.69H5.61V16.34H1.55V14.35H5.72V12.96H0M14.56 13.38V15.09H13.4V16.45H14.56V19.65C14.56 20.46 15.13 21.1 16.16 21.1H17.8V19.74H16.66C16.31 19.74 16.09 19.58 16.09 19.26V16.45H17.8V15.09H16.09V13.38H14.56M9.32 14.94C7.53 14.94 6.12 16.34 6.12 18.1C6.12 19.85 7.53 21.25 9.32 21.25C10.04 21.25 10.71 21 11.24 20.56V21.1H12.76V15.09H11.24V15.63A2.96 2.96 0 0 0 9.32 14.94M21.04 14.94C19.45 14.94 18.34 15.59 18.34 16.86C18.34 17.73 18.95 18.3 20.27 18.58L21.72 18.92C22.29 19.03 22.44 19.18 22.44 19.42C22.44 19.79 22 20.03 21.31 20.03C20.44 20.03 19.94 19.83 19.74 19.17H18.21C18.43 20.42 19.36 21.25 21.26 21.25C23 21.25 24 20.42 24 19.26C24 18.44 23.42 17.83 22.19 17.57L20.9 17.3C20.15 17.16 19.91 17 19.91 16.74C19.91 16.38 20.27 16.16 20.94 16.16C21.66 16.16 22.19 16.36 22.34 17H23.86C23.78 15.77 22.87 14.94 21.04 14.94M9.45 16.26C10.46 16.26 11.27 17.07 11.27 18.1S10.46 19.93 9.45 19.93A1.82 1.82 0 0 1 7.62 18.1C7.62 17.07 8.45 16.26 9.45 16.26Z" />
+              </svg>
+              Uber Eats
+            </a>
+          </div>
+        </details>
 
+        <div class="visit-proof" aria-label="Why visit in person">
+          <strong>Best for post-event dessert runs</strong>
+          <span id="visitStatusNote">Walk in, scan your perk (min spend £15), and enjoy full presentation fresh from the kitchen.</span>
+        </div>
+
+        <nav class="links" aria-label="Quick links">
           <a class="link-card" href="https://drive.google.com/file/d/1cYUIPV2PICYYkEvBJx7aYm1aqC_Q8vsA/view?usp=sharing"
             target="_blank" rel="noopener noreferrer" onclick="trackEvent('view-menu', 'ViewMenu')">
             <div class="lc-left">
@@ -1426,7 +1487,7 @@
               </div>
               <div>
                 <div class="lc-title">View menu</div>
-                <div class="lc-sub">Browse our desserts and drinks</div>
+                <div class="lc-sub">Pick your order before you arrive</div>
               </div>
             </div>
             <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
@@ -1446,7 +1507,7 @@
               </div>
               <div>
                 <div class="lc-title">Leave a review</div>
-                <div class="lc-sub">We’d love your feedback</div>
+                <div class="lc-sub">Tell others after your visit</div>
               </div>
             </div>
             <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
@@ -1454,47 +1515,16 @@
             </svg>
           </a>
 
-          <a class="link-card" href="https://urbanchocolatier.com/" target="_blank" rel="noopener noreferrer"
-            onclick="trackEvent('visit-website', 'VisitWebsite')">
-            <div class="lc-left">
-              <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9H15a15 15 0 0 0-1.2-6 8 8 0 0 1 6.1 6zM12 4c1.2 1.6 2 4 2.3 7H9.7C10 8 10.8 5.6 12 4zM4.1 11A8 8 0 0 1 10.2 5a15 15 0 0 0-1.2 6H4.1zm0 2H9a15 15 0 0 0 1.2 6 8 8 0 0 1-6.1-6zm7.9 7c-1.2-1.6-2-4-2.3-7h4.6c-.3 3-1.1 5.4-2.3 7zm1.8-.9a15 15 0 0 0 1.2-6h4.8a8 8 0 0 1-6 6z" />
-                </svg>
-              </div>
-              <div>
-                <div class="lc-title">Visit our website</div>
-                <div class="lc-sub">Explore signature creations</div>
-              </div>
-            </div>
-            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </a>
-
-          <a class="link-card maps-link" href="#" target="_blank" rel="noopener noreferrer"
-            onclick="trackEvent('get-directions', 'GetDirections')">
-            <div class="lc-left">
-              <div class="lc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z" />
-                </svg>
-              </div>
-              <div>
-                <div class="lc-title">Get directions</div>
-                <div class="lc-sub">Open in Google Maps</div>
-              </div>
-            </div>
-            <svg class="lc-chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </a>
         </nav>
 
-        <section class="reviews" aria-label="Recent reviews">
-          <h2>Recent reviews</h2>
+        <details class="content-collapse">
+          <summary>
+            See recent reviews
+            <svg class="collapse-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </summary>
+          <section class="reviews content-collapse-body" aria-label="Recent reviews">
 
           <div class="review">
             <div class="avatar" aria-hidden="true">SM</div>
@@ -1531,10 +1561,17 @@
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </details>
 
-        <section class="signature" aria-label="Our signature desserts">
-          <h2>Our signature <span class="hint">Swipe</span></h2>
+        <details class="content-collapse">
+          <summary>
+            View signature desserts
+            <svg class="collapse-chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </summary>
+          <section class="signature content-collapse-body" aria-label="Our signature desserts">
           <div class="sig-track" role="list">
             <a class="sig js-lightbox" role="listitem"
               href="images/profiteroles.png"
@@ -1573,11 +1610,8 @@
               <div class="sig-cap">Chocolate delight</div>
             </a>
           </div>
-        </section>
-
-
-
-        <div class="note" id="note" aria-live="polite"></div>
+          </section>
+        </details>
       </div>
     </section>
   </main>
@@ -1592,7 +1626,7 @@
         Call
       </a>
 
-      <a class="sbtn maps-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Directions"
+      <a class="sbtn sbtn-primary maps-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Directions"
         onclick="trackEvent('get-directions', 'GetDirections')">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
@@ -1601,12 +1635,12 @@
         Directions
       </a>
 
-      <button class="sbtn" id="shareBtn" type="button" aria-label="Share" onclick="trackEvent('share', 'Share')">
+      <button class="sbtn" type="button" aria-label="Perk" onclick="openVoucher(event); trackEvent('unlock-voucher', 'UnlockVoucher')">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
-            d="M18 16a3 3 0 0 0-2.4 1.2l-6.2-3.1c.1-.3.1-.7 0-1l6.2-3.1A3 3 0 1 0 14 7c0 .2 0 .4.1.6L7.9 10.7a3 3 0 1 0 0 2.6l6.2 3.1c-.1.2-.1.4-.1.6a3 3 0 1 0 3-3z" />
+            d="M20 12h-2V6h2v6zm0 4h-2v2h2v-2zM4 12h2V6H4v6zm0 4h2v2H4v-2zM9 4h6v2H9V4zm0 2H7v12h2V6zm6 0h2v12h-2V6z" />
         </svg>
-        Share
+        <span id="perkStickyLabel">Perk</span>
       </button>
     </div>
   </div>
@@ -1634,7 +1668,6 @@
     // UI Initializer
     document.addEventListener('DOMContentLoaded', () => {
       initLiveStatus();
-      initShare();
       initLightbox();
       registerSW();
 
@@ -1645,6 +1678,7 @@
 
     function initLiveStatus() {
       const badge = document.getElementById("statusBadge");
+      const visitStatusNote = document.getElementById("visitStatusNote");
       if (!badge) return;
 
       const now = new Date();
@@ -1656,6 +1690,11 @@
         const isOpen = isStoreOpen(timeStr, todaySchedule.opens, todaySchedule.closes);
         badge.classList.toggle("closed", !isOpen);
         badge.querySelector("span").textContent = isOpen ? `Open Now • Closes ${todaySchedule.closes}` : "Closed • Opening soon";
+        if (visitStatusNote) {
+          visitStatusNote.textContent = isOpen
+            ? `Open now until ${todaySchedule.closes}. Head over and use your in-store perk (min spend £15).`
+            : "Currently closed. Plan your route now and save your in-store perk (min spend £15) for opening.";
+        }
       }
 
       // Highlight today in hours list
@@ -1671,38 +1710,6 @@
         return now >= open || now < close;
       }
       return now >= open && now < close;
-    }
-
-    function initShare() {
-      const shareBtn = document.getElementById("shareBtn");
-      shareBtn?.addEventListener("click", async () => {
-        const shareData = {
-          title: 'The Urban Chocolatier',
-          text: 'Check out the premium dessert menu at The Urban Chocolatier Wembley!',
-          url: window.location.href
-        };
-
-        try {
-          if (navigator.share) {
-            await navigator.share(shareData);
-          } else {
-            await navigator.clipboard.writeText(window.location.href);
-            showToast("Link copied to clipboard");
-          }
-        } catch (err) {
-          console.error("Share failed", err);
-        }
-      });
-    }
-
-    function showToast(msg) {
-      const note = document.getElementById("note");
-      if (!note) return;
-      note.textContent = msg;
-
-      // Using CSS visibility for premium feel
-      note.style.opacity = "1";
-      setTimeout(() => { note.style.opacity = "0"; }, 2000);
     }
 
     function initLightbox() {
@@ -1788,7 +1795,7 @@
 
     function redeemVoucher(e) {
       e.stopPropagation();
-      if (confirm('STAFF CHECK:\n\nAre you sure you want to redeem this voucher?\nThis action is permanent and creates a timestamped log.')) {
+      if (confirm('STAFF CHECK:\n\nConfirm basket is £15 minimum before redeeming.\n\nAre you sure you want to redeem this voucher?\nThis action is permanent and creates a timestamped log.')) {
         localStorage.setItem('uc_voucher_redeemed', 'true');
         localStorage.setItem('uc_voucher_redeemed_time', Date.now().toString());
         trackEvent('redeem-voucher', 'RedeemVoucher');
@@ -1814,10 +1821,10 @@
     }
 
     function updateLinkText(text) {
-      const title = document.querySelector('.lc-title[style*="D4AF37"]'); // Gold title
-      const sub = document.querySelector('.lc-sub'); // We might want to target the specific sub if possible
-      if (title) title.textContent = text;
-      // Ideally we'd add a specific ID to the link card for cleaner selection, but this works for now
+      const mini = document.getElementById('perkMiniLabel');
+      const sticky = document.getElementById('perkStickyLabel');
+      if (mini) mini.textContent = text;
+      if (sticky) sticky.textContent = text === 'Voucher Redeemed' ? 'Redeemed' : 'Perk';
     }
 
     function closeVoucher(e) {
@@ -1861,6 +1868,7 @@
   <script>
     if (!localStorage.getItem('uc_cookie_consent')) {
       document.getElementById('cookie-banner').style.display = 'block';
+      document.body.classList.add('cookie-open');
     }
   </script>
 </body>
