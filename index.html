@@ -17,21 +17,17 @@
   <meta property="og:description"
     content="Experience luxury desserts at The Urban Chocolatier. Famous for our chocolate profiteroles and signature creations." />
   <meta property="og:type" content="website" />
-  <meta property="og:image"
-    content="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
+  <meta property="og:image" content="https://ucwembley.2--y.com/images/hero.jpg" />
   <meta property="og:url" content="https://ucwembley.2--y.com/" />
   <meta property="og:site_name" content="The Urban Chocolatier" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon"
-    href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261.jpeg?t=1708449747" />
+  <link rel="icon" href="images/favicon.jpg" />
 
-  <link rel="preconnect" href="https://cdn0030.qrcodechimp.com" crossorigin>
   <link rel="preconnect" href="https://order.storekit.com">
   <link rel="preconnect" href="https://www.ubereats.com">
   <link rel="preconnect" href="https://deliveroo.co.uk">
-  <link rel="preload" as="image"
-    href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg" />
+  <link rel="preload" as="image" href="images/hero.jpg" />
 
   <!-- Use your exact Google Maps link everywhere -->
   <script>
@@ -43,7 +39,7 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "The Urban Chocolatier",
-    "image": "https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg",
+    "image": "https://ucwembley.2--y.com/images/hero.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "393 High Rd",
@@ -66,10 +62,10 @@
       "reviewCount": "1997"
     },
     "openingHoursSpecification": [
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "01:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "13:00", "closes": "01:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "13:00", "closes": "02:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "02:00"}
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "01:15"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "13:00", "closes": "01:15"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "13:00", "closes": "02:15"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "02:15"}
     ]
   }
   </script>
@@ -490,7 +486,7 @@
     }
 
     .hours-item .time {
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
     .hours-item.today {
@@ -1165,31 +1161,38 @@
     // Cookie Consent & Tracking Management
     (function() {
       const hasConsented = localStorage.getItem('uc_cookie_consent') === 'accepted';
-      
-      // Safe stub functions for pre-consent (only for gtag/umami, NOT fbq)
+
+      // Safe stubs before consent.
       window.gtag = window.gtag || function() {};
-      window.umami = null;
-      
-      // Meta Pixel IIFE - Initialize BEFORE setting stubs (critical fix)
-      !function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      
+      window.umami = window.umami || null;
+
+      function initMetaPixel() {
+        if (window.fbq && window.fbq.loaded) return;
+        !function(f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function() {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '2.0';
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      }
+
       // Load tracking scripts after consent
       function loadTrackingScripts() {
+        if (window.__ucTrackingLoaded) return;
+        window.__ucTrackingLoaded = true;
+
+        initMetaPixel();
+
         // Meta Pixel - Initialize immediately
         fbq('init', '1612471676399433');
         fbq('track', 'PageView');
@@ -1234,24 +1237,30 @@
     // Enhanced tracking helper with conversion support
     function trackEvent(name, label, options = {}) {
       const eventMap = {
-        'order-now': { fbqEvent: 'InitiateCheckout', gaLabel: 'order_now' },
-        'order-uber-eats': { fbqEvent: 'Click', gaLabel: 'order_ubereats' },
-        'order-deliveroo': { fbqEvent: 'Click', gaLabel: 'order_deliveroo' },
-        'unlock-voucher': { fbqEvent: 'ViewContent', gaLabel: 'unlock_voucher' },
-        'redeem-voucher': { fbqEvent: 'Purchase', gaLabel: 'redeem_voucher' },
-        'leave-review': { fbqEvent: 'FindLocation', gaLabel: 'leave_review' },
-        'visit-website': { fbqEvent: 'Click', gaLabel: 'visit_website' },
-        'get-directions': { fbqEvent: 'FindLocation', gaLabel: 'get_directions' },
-        'call': { fbqEvent: 'Click', gaLabel: 'call_restaurant' },
-        'view-menu': { fbqEvent: 'ViewContent', gaLabel: 'view_menu' },
-        'share': { fbqEvent: 'Share', gaLabel: 'share_page' }
+        'order-now': { fbqEvent: 'InitiateCheckout', fbqMethod: 'track', gaLabel: 'order_now' },
+        'order-uber-eats': { fbqEvent: 'order_ubereats', fbqMethod: 'trackCustom', gaLabel: 'order_ubereats' },
+        'order-deliveroo': { fbqEvent: 'order_deliveroo', fbqMethod: 'trackCustom', gaLabel: 'order_deliveroo' },
+        'unlock-voucher': { fbqEvent: 'ViewContent', fbqMethod: 'track', gaLabel: 'unlock_voucher' },
+        'redeem-voucher': { fbqEvent: 'Purchase', fbqMethod: 'track', gaLabel: 'redeem_voucher' },
+        'leave-review': { fbqEvent: 'leave_review', fbqMethod: 'trackCustom', gaLabel: 'leave_review' },
+        'visit-website': { fbqEvent: 'visit_website', fbqMethod: 'trackCustom', gaLabel: 'visit_website' },
+        'get-directions': { fbqEvent: 'FindLocation', fbqMethod: 'track', gaLabel: 'get_directions' },
+        'call': { fbqEvent: 'Contact', fbqMethod: 'track', gaLabel: 'call_restaurant' },
+        'view-menu': { fbqEvent: 'ViewContent', fbqMethod: 'track', gaLabel: 'view_menu' },
+        'share': { fbqEvent: 'share_page', fbqMethod: 'trackCustom', gaLabel: 'share_page' }
       };
-      
-      const eventConfig = eventMap[name] || { fbqEvent: 'CustomEvent', gaLabel: label || name };
-      
+
+      const eventConfig = eventMap[name] || { fbqEvent: label || name, fbqMethod: 'trackCustom', gaLabel: label || name };
+      const hasConsented = localStorage.getItem('uc_cookie_consent') === 'accepted';
+
+      // Respect consent before any analytics calls.
+      if (!hasConsented) {
+        return;
+      }
+
       // Facebook Pixel tracking
-      if (window.fbq) {
-        fbq('trackCustom', eventConfig.fbqEvent, options);
+      if (window.fbq && typeof window.fbq === 'function') {
+        fbq(eventConfig.fbqMethod, eventConfig.fbqEvent, options);
       }
       
       // Google Analytics
@@ -1266,11 +1275,6 @@
     }
   </script>
 
-  <!-- Facebook Pixel noscript fallback -->
-  <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1" />
-  </noscript>
-
 </head>
 
 <body>
@@ -1278,14 +1282,14 @@
     <section class="card" aria-label="The Urban Chocolatier">
 
       <a class="hero js-lightbox"
-        href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg"
+        href="images/hero.jpg"
         aria-label="View hero image">
         <div id="statusBadge" class="status-badge">
           <div class="status-dot"></div>
           <span>Checking...</span>
         </div>
         <img
-          src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/30ebc63f-976c-4ab7-a733-2d221e3ec261_m.jpeg"
+          src="images/hero.jpg"
           alt="The Urban Chocolatier desserts" width="840" height="500" loading="eager" fetchpriority="high" />
         <div class="hero-content">
           <h1 class="brand">The Urban Chocolatier</h1>
@@ -1533,37 +1537,37 @@
           <h2>Our signature <span class="hint">Swipe</span></h2>
           <div class="sig-track" role="list">
             <a class="sig js-lightbox" role="listitem"
-              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png"
+              href="images/profiteroles.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/chocolate-profiteroles-365x365_1.png"
+                  src="images/profiteroles.png"
                   alt="Chocolate profiteroles" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Chocolate profiteroles</div>
             </a>
             <a class="sig js-lightbox" role="listitem"
-              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png"
+              href="images/signature.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/6.png"
+                  src="images/signature.png"
                   alt="Signature creation" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Signature creation</div>
             </a>
             <a class="sig js-lightbox" role="listitem"
-              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png"
+              href="images/waffles.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/3.png"
+                  src="images/waffles.png"
                   alt="Waffles & drizzle" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Waffles & drizzle</div>
             </a>
             <a class="sig js-lightbox" role="listitem"
-              href="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png"
+              href="images/chocolate.png"
               rel="noopener noreferrer">
               <div class="sig-img loading"><img
-                  src="https://cdn0030.qrcodechimp.com/qr/PROD/65bba3a287c5b54d253ab6ae/fm/2.png"
+                  src="images/chocolate.png"
                   alt="Chocolate delight" width="365" height="365" loading="lazy"
                   onload="this.classList.add('loaded'); this.parentElement.classList.remove('loading')"></div>
               <div class="sig-cap">Chocolate delight</div>
