@@ -1166,13 +1166,34 @@
     (function() {
       const hasConsented = localStorage.getItem('uc_cookie_consent') === 'accepted';
       
-      // Stubs for tracking functions (used before consent)
-      window.gtag = function() {};
-      window.fbq = function() {};
+      // Safe stub functions for pre-consent (only for gtag/umami, NOT fbq)
+      window.gtag = window.gtag || function() {};
       window.umami = null;
+      
+      // Meta Pixel IIFE - Initialize BEFORE setting stubs (critical fix)
+      !function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
       
       // Load tracking scripts after consent
       function loadTrackingScripts() {
+        // Meta Pixel - Initialize immediately
+        fbq('init', '1612471676399433');
+        fbq('track', 'PageView');
+        
         // Google Analytics
         const gaScript = document.createElement('script');
         gaScript.async = true;
@@ -1190,19 +1211,6 @@
         umamiScript.src = 'https://cloud.umami.is/script.js';
         umamiScript.setAttribute('data-website-id', 'bd86632a-3799-40d4-988d-02c0fde2ea1a');
         document.head.appendChild(umamiScript);
-        
-        // Meta Pixel
-        !function(f, b, e, v, n, t, s) {
-          if (f.fbq) return; n = f.fbq = function() {
-            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-          };
-          if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-          n.queue = []; t = b.createElement(e); t.async = !0;
-          t.src = v; s = b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t, s);
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1612471676399433');
-        fbq('track', 'PageView');
       }
       
       // Handle cookie consent
@@ -1223,13 +1231,46 @@
       }
     })();
     
-    // Standard tracking helper
-    function trackEvent(name, label) {
-      if (window.umami && window.umami.track) umami.track(name);
-      if (window.fbq && window.fbq !== function(){}) fbq('trackCustom', label || name);
-      if (window.gtag && window.gtag !== function(){}) gtag('event', name.replace(/-/g, '_'));
+    // Enhanced tracking helper with conversion support
+    function trackEvent(name, label, options = {}) {
+      const eventMap = {
+        'order-now': { fbqEvent: 'InitiateCheckout', gaLabel: 'order_now' },
+        'order-uber-eats': { fbqEvent: 'Click', gaLabel: 'order_ubereats' },
+        'order-deliveroo': { fbqEvent: 'Click', gaLabel: 'order_deliveroo' },
+        'unlock-voucher': { fbqEvent: 'ViewContent', gaLabel: 'unlock_voucher' },
+        'redeem-voucher': { fbqEvent: 'Purchase', gaLabel: 'redeem_voucher' },
+        'leave-review': { fbqEvent: 'FindLocation', gaLabel: 'leave_review' },
+        'visit-website': { fbqEvent: 'Click', gaLabel: 'visit_website' },
+        'get-directions': { fbqEvent: 'FindLocation', gaLabel: 'get_directions' },
+        'call': { fbqEvent: 'Click', gaLabel: 'call_restaurant' },
+        'view-menu': { fbqEvent: 'ViewContent', gaLabel: 'view_menu' },
+        'share': { fbqEvent: 'Share', gaLabel: 'share_page' }
+      };
+      
+      const eventConfig = eventMap[name] || { fbqEvent: 'CustomEvent', gaLabel: label || name };
+      
+      // Facebook Pixel tracking
+      if (window.fbq) {
+        fbq('trackCustom', eventConfig.fbqEvent, options);
+      }
+      
+      // Google Analytics
+      if (window.gtag && typeof window.gtag === 'function') {
+        gtag('event', eventConfig.gaLabel, options);
+      }
+      
+      // Umami Analytics
+      if (window.umami && typeof window.umami.track === 'function') {
+        window.umami.track(name, options);
+      }
     }
   </script>
+
+  <!-- Facebook Pixel noscript fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1612471676399433&ev=PageView&noscript=1" />
+  </noscript>
+
 </head>
 
 <body>
